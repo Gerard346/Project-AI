@@ -20,6 +20,16 @@ public class SteeringAlign : MonoBehaviour {
         // TODO 7: Very similar to arrive, but using angular velocities
         // Find the desired rotation and accelerate to it
         // Use Vector3.SignedAngle() to find the angle between two directions
+        float diff = Vector3.SignedAngle(transform.forward, move.mov_velocity, transform.up);
+        if (Mathf.Abs(diff) < min_angle)
+        {
+            move.AccelerateRotation(0.0f);
+        }
+        else if (Mathf.Abs(diff) > slow_angle)
+        {
+            move.AccelerateRotation(Mathf.Clamp(diff, -move.max_rot_acceleration, move.max_rot_acceleration));
+        }
+     
 
     }
 }
