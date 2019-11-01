@@ -8,6 +8,7 @@ public class Move : MonoBehaviour
     public Vector3 target;
     public GameObject aim;
     public Slider arrow;
+
     public float max_mov_velocity = 25.0f;
     public float max_mov_acceleration = 5.0f;
     public float rotation_velocity = 0.1f;
@@ -15,6 +16,8 @@ public class Move : MonoBehaviour
     public float max_rot_speed = 10.0f;
     public Vector3 mov_velocity = Vector3.zero;
 
+    Vector3[] movementvelocity = new Vector3[10];
+    float[] rotationvelocity = new float[10];
 
     private void Start()
     {
@@ -25,21 +28,39 @@ public class Move : MonoBehaviour
     {
         mov_velocity = vel;
     }
-    public void AccelerateMovement(Vector3 vel)
+    public void AccelerateMovement(Vector3 vel, int priority)
     {
-        mov_velocity += vel;
+        movementvelocity[priority] = vel;
     }
     public void SetRotationVelocity(float rot_velocity)
     {
         rotation_velocity = rot_velocity;
     }
-    public void AccelerateRotation(float rot_acceleration)
+    public void AccelerateRotation(float rot_acceleration, int priority)
     {
-        rotation_velocity += rot_acceleration;
+        rotationvelocity[priority] = rot_acceleration;
     }
     // Update is called once per frame
     void Update()
     {
+
+        for(int i = movementvelocity.Length; i>0; i--)
+        {
+            if(movementvelocity[i].magnitude > 0.0f)
+            {
+                mov_velocity += movementvelocity[i];
+                break;
+            }
+        }
+        for (int i = rotationvelocity.Length; i > 0; i--)
+        {
+            if (Mathf.Abs(rotationvelocity[i]) > 0.0f)
+            {
+                rotation_velocity += rotationvelocity[i];
+                break;
+            }
+        }
+
         if (mov_velocity.magnitude > max_mov_velocity)//magnitude->Vector size
         {
             mov_velocity.Normalize(); //If so put the vector at 1
@@ -58,8 +79,15 @@ public class Move : MonoBehaviour
         mov_velocity.y = 0.0f;
         transform.position += mov_velocity * Time.deltaTime;
 
-        mov_velocity = Vector3.zero;
-        rotation_velocity = 0.0f;
+        //Reset to 0
+        for(int i = 0; i<movementvelocity.Length; i++)
+        {
+            movementvelocity[i] = Vector3.zero;
+        }
 
+        for(int i = 0; i < rotationvelocity.Length; i++)
+        {
+            rotationvelocity[i] = 0.0f;
+        }
     }
 }

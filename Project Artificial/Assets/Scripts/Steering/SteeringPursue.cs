@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SteeringPursue : MonoBehaviour {
+public class SteeringPursue : CombineBehaviours
+{
 
 	public float max_seconds_prediction;
 

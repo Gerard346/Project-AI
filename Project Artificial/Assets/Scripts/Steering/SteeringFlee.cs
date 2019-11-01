@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SteeringFlee : MonoBehaviour {
+public class SteeringFlee : CombineBehaviours
+{
 
 	Move move;
 
@@ -24,7 +25,7 @@ public class SteeringFlee : MonoBehaviour {
 
         Vector3 diff = target - transform.position;
         diff = diff.normalized * move.max_mov_acceleration;
-        move.AccelerateMovement(-diff);
+        move.AccelerateMovement(-diff, priority);
         move.target = target;
     }
 }

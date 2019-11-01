@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SteeringSeek : MonoBehaviour {
+public class SteeringSeek : CombineBehaviours
+{
 
 	Move move;
 
@@ -26,7 +27,7 @@ public class SteeringSeek : MonoBehaviour {
 
         Vector3 diff = target - transform.position;
         diff = diff.normalized * move.max_mov_acceleration;
-        move.AccelerateMovement(diff);
+        move.AccelerateMovement(diff, priority);
         move.target = target;
 
     }
