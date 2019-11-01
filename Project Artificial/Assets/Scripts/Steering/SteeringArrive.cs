@@ -38,17 +38,22 @@ public class SteeringArrive : CombineBehaviours
         // Once inside the slow radius, the further we are from it, the slower we go
         Vector3 ideal_velocity;
         Vector3 diff = target - transform.position;
-      
+
         if (diff.magnitude < min_distance)
+        {
             move.SetMovementVelocity(Vector3.zero);
-
-        if (diff.magnitude > slow_distance)
-            ideal_velocity = diff.normalized * move.max_mov_velocity;
+        }
         else
-            ideal_velocity = diff.normalized * (move.max_mov_velocity * diff.magnitude) / slow_distance; //diff direcció a la que vols anar . ()el vector cap on val anar a la màxima velocitat.
+        {
+            if (diff.magnitude > slow_distance)
+                ideal_velocity = diff.normalized * move.max_mov_velocity;
+            else
+                ideal_velocity = diff.normalized * (move.max_mov_velocity * diff.magnitude) / slow_distance; //diff direcció a la que vols anar . ()el vector cap on val anar a la màxima velocitat.
 
-        // If we are close enough to the target just stop moving and do nothing else
-      
+
+            move.AccelerateMovement(ideal_velocity, priority);
+            // If we are close enough to the target just stop moving and do nothing else
+        }
     }
 
 	void OnDrawGizmosSelected() 

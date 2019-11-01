@@ -44,7 +44,7 @@ public class Move : MonoBehaviour
     void Update()
     {
 
-        for(int i = movementvelocity.Length; i>0; i--)
+        for(int i = movementvelocity.Length-1; i>0; i--)
         {
             if(movementvelocity[i].magnitude > 0.0f)
             {
@@ -52,7 +52,7 @@ public class Move : MonoBehaviour
                 break;
             }
         }
-        for (int i = rotationvelocity.Length; i > 0; i--)
+        for (int i = rotationvelocity.Length-1; i > 0; i--)
         {
             if (Mathf.Abs(rotationvelocity[i]) > 0.0f)
             {
@@ -89,5 +89,8 @@ public class Move : MonoBehaviour
         {
             rotationvelocity[i] = 0.0f;
         }
+        
+        //rotation_velocity = 0.0f;
+        //mov_velocity = Vector3.zero;
     }
 }
