@@ -46,12 +46,17 @@ public class SteeringArrive : CombineBehaviours
         else
         {
             if (diff.magnitude > slow_distance)
+            {
                 ideal_velocity = diff.normalized * move.max_mov_velocity;
+            }
             else
-                ideal_velocity = diff.normalized * (move.max_mov_velocity * diff.magnitude) / slow_distance; //diff direcció a la que vols anar . ()el vector cap on val anar a la màxima velocitat.
+            {
+                ideal_velocity = diff.normalized * move.max_mov_velocity * (diff.magnitude/ slow_distance); //diff direcció a la que vols anar . ()el vector cap on val anar a la màxima velocitat.
+            }
 
+            ideal_velocity /= time_to_accel;
 
-            move.AccelerateMovement(ideal_velocity, priority);
+            move.AccelerateMovement((ideal_velocity - move.mov_velocity), priority);
             // If we are close enough to the target just stop moving and do nothing else
         }
     }

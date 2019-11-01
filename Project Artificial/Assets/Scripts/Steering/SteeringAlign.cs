@@ -24,9 +24,26 @@ public class SteeringAlign : CombineBehaviours
         float diff = Vector3.SignedAngle(transform.forward, move.mov_velocity, transform.up);
          if (Mathf.Abs(diff) > min_angle)
         {
-            move.AccelerateRotation(Mathf.Clamp(diff, -move.max_rot_acceleration, move.max_rot_acceleration), priority);
+            float ideal_rot_velocity = 0.0f;
+
+            if (Mathf.Abs(diff) > slow_angle)
+            {
+                ideal_rot_velocity = diff / Mathf.Abs(diff) * move.max_rot_acceleration;
+                //move.AccelerateRotation(Mathf.Clamp(diff/Mathf.Abs(diff) *  move.max_rot_acceleration, -move.max_rot_acceleration, move.max_rot_acceleration), priority);
+            }
+            else
+            {
+               ideal_rot_velocity = (move.max_rot_speed * (Mathf.Abs(diff) / slow_angle)) * diff / Mathf.Abs(diff); //diff direcció a la que vols anar . ()el vector cap on val anar a la màxima velocitat.
+            }
+
+            ideal_rot_velocity /= time_to_target;
+
+            move.AccelerateRotation(ideal_rot_velocity - move.rotation_velocity, priority);
         }
-     
+        else
+        {
+            move.SetRotationVelocity(0.0f);
+        }
 
     }
 }

@@ -30,6 +30,10 @@ public class Move : MonoBehaviour
     }
     public void AccelerateMovement(Vector3 vel, int priority)
     {
+        if(vel.magnitude > max_mov_acceleration)
+        {
+            vel = vel.normalized * max_mov_acceleration;
+        }
         movementvelocity[priority] = vel;
     }
     public void SetRotationVelocity(float rot_velocity)
@@ -38,6 +42,10 @@ public class Move : MonoBehaviour
     }
     public void AccelerateRotation(float rot_acceleration, int priority)
     {
+        if(Mathf.Abs(rot_acceleration) > max_rot_acceleration)
+        {
+            rot_acceleration = max_rot_acceleration * rot_acceleration / (Mathf.Abs(rot_acceleration));
+        }
         rotationvelocity[priority] = rot_acceleration;
     }
     // Update is called once per frame
@@ -48,7 +56,7 @@ public class Move : MonoBehaviour
         {
             if(movementvelocity[i].magnitude > 0.0f)
             {
-                mov_velocity += movementvelocity[i];
+                mov_velocity += movementvelocity[i]*Time.deltaTime;
                 break;
             }
         }
@@ -56,7 +64,7 @@ public class Move : MonoBehaviour
         {
             if (Mathf.Abs(rotationvelocity[i]) > 0.0f)
             {
-                rotation_velocity += rotationvelocity[i];
+                rotation_velocity += rotationvelocity[i]*Time.deltaTime;
                 break;
             }
         }

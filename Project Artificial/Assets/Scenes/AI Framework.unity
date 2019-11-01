@@ -3481,14 +3481,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity_target: {fileID: 1130398157}
-  target: {x: 0, y: 0, z: 0}
+  target: {x: 14.925855, y: 0, z: 1.4952809}
   aim: {fileID: 1248009676}
   arrow: {fileID: 569448187}
-  max_mov_velocity: 25
-  max_mov_acceleration: 10
-  rotation_velocity: 0.1
-  max_rot_acceleration: 30
-  max_rot_speed: 45
+  max_mov_velocity: 50
+  max_mov_acceleration: 8
+  rotation_velocity: 0
+  max_rot_acceleration: 1500
+  max_rot_speed: 10000
   mov_velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &1268264598
 MonoBehaviour:
@@ -3503,9 +3503,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 5
-  min_distance: 0.5
-  slow_distance: 5
-  time_to_accel: 0.1
+  min_distance: 0.1
+  slow_distance: 10
+  time_to_accel: 10
 --- !u!4 &1268264602
 Transform:
   m_ObjectHideFlags: 0
@@ -3558,15 +3558,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268264594}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1a2539257a3a4efeb46289d1eb08300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 5
   min_angle: 10
-  slow_angle: 50
-  time_to_target: 0.2
+  slow_angle: 500
+  time_to_target: 10
 --- !u!114 &1268264607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3678,6 +3678,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306440706}
   m_Mesh: {fileID: 4300000, guid: 38b4fea28f58d3641980a70a5188e750, type: 3}
+--- !u!1 &1321738569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321738570}
+  m_Layer: 0
+  m_Name: ClientGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1321738570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321738569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.19000006, y: 1.0084317, z: -7.5000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1391056259
 GameObject:
   m_ObjectHideFlags: 0
