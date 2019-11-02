@@ -11,6 +11,7 @@ public class DayCycle : MonoBehaviour
     public int days;
     public TimeSpan current_time;
     public TimeSpan current_day;
+
     public float speed;
 
     public Light sun;

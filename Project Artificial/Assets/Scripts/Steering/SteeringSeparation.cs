@@ -19,7 +19,6 @@ public class SteeringSeparation : CombineBehaviours
     // Update is called once per frame
     void Update()
     {
-
         Collider[] tanks = Physics.OverlapSphere(transform.position, search_radius, mask.value);
         Vector3 separation = Vector3.zero;
 
@@ -28,10 +27,12 @@ public class SteeringSeparation : CombineBehaviours
             if (transform.GetComponent<Collider>() != col)
             {
                 separation = transform.position - col.transform.position;
+                float separation_magnitude = separation.magnitude;
                 separation.Normalize();
-                separation *= 0.1f - strength.Evaluate(separation.magnitude / search_radius);
+                separation *= -strength.Evaluate(separation_magnitude / search_radius) * move.max_mov_velocity;
             }
-            move.mov_velocity += separation;
+
+            move.AccelerateMovement(separation, priority);
         }
     }
 

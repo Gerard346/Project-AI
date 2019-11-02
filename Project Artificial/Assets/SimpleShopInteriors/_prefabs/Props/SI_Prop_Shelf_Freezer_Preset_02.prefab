@@ -15,8 +15,8 @@ GameObject:
   m_Name: SI_Prop_Shelf_Freezer_Preset_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &495466
 Transform:

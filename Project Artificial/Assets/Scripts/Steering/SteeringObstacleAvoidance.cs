@@ -46,7 +46,7 @@ public class SteeringObstacleAvoidance : CombineBehaviours
                 Vector3 diff = escapeTargetPosition - transform.position;
                 diff.Normalize();
 
-                move.mov_velocity += diff;
+                move.AccelerateMovement(diff * move.max_mov_velocity,priority);
             }
         }
     }

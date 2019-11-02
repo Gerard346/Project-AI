@@ -6,8 +6,8 @@ public class Move : MonoBehaviour
 {
     public GameObject entity_target;
     public Vector3 target;
-    public GameObject aim;
-    public Slider arrow;
+    //public GameObject aim;
+    //public Slider arrow;
 
     public float max_mov_velocity = 25.0f;
     public float max_mov_acceleration = 5.0f;
@@ -78,10 +78,10 @@ public class Move : MonoBehaviour
         Mathf.Clamp(rotation_velocity, -max_rot_speed, max_rot_speed);//Makes sure the value is between this two values.
 
         float angle = Mathf.Atan2(mov_velocity.x, mov_velocity.z);//Atan2->Angle vector of axis y
-        aim.transform.rotation = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);//
+        //aim.transform.rotation = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);//
 
 
-        arrow.value = mov_velocity.magnitude * 4;
+        //arrow.value = mov_velocity.magnitude * 4;
 
         transform.rotation *= Quaternion.AngleAxis(rotation_velocity * Time.deltaTime, Vector3.up);
         mov_velocity.y = 0.0f;
@@ -100,5 +100,10 @@ public class Move : MonoBehaviour
         
         //rotation_velocity = 0.0f;
         //mov_velocity = Vector3.zero;
+    }
+
+    public void GoTo(Vector3 target_point)
+    {
+        GetComponent<PathFinding>().SetTarget(target_point);
     }
 }

@@ -61,6 +61,12 @@ public class SteeringArrive : CombineBehaviours
         }
     }
 
+    public bool IsOnTarget()
+    {
+        Vector3 diff = move.target - transform.position;
+        return diff.magnitude < min_distance;
+    } 
+
 	void OnDrawGizmosSelected() 
 	{
 		// Display the explosion radius when selected
