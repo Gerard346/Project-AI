@@ -17,7 +17,7 @@ public class DayCycle : MonoBehaviour
 
     public Text time_ui;
     public Text day_ui;
-
+    static public bool next_day = false;
     public bool time_to_clean = false;
     public bool store_is_open = false;
     public bool spawn_employees = false;
@@ -37,10 +37,12 @@ public class DayCycle : MonoBehaviour
 
         if (actual_time > total_time_day)
         {
+
             actual_time = 0;
             days += 1;
             day_has_passed = false;
             time_to_clean = true;
+            next_day = true;
         }
         if (actual_time > (total_time_day / 3) && day_has_passed == false){
             spawn_employees = true;
@@ -51,7 +53,7 @@ public class DayCycle : MonoBehaviour
         {
             store_is_open = true;
         }
-        if (actual_time > total_time_day - 20000)
+        if (actual_time > 62000)
         {
             store_is_open = false;
         }

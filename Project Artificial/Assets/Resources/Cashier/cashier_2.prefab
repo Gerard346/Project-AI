@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 1368126306774325594}
   - component: {fileID: 1368126306774325571}
   - component: {fileID: 1368126306774325572}
+  - component: {fileID: 894514931180528509}
   - component: {fileID: 1368126306774325573}
   - component: {fileID: 1368126306774325570}
   - component: {fileID: 1368126306774325569}
@@ -611,6 +612,7 @@ MonoBehaviour:
   go_home_path: {fileID: 0}
   spawn_pos: {fileID: 0}
   queue_controller: {fileID: 0}
+  orientation_pos: {fileID: 0}
 --- !u!114 &1368126306774325571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,6 +643,23 @@ MonoBehaviour:
   min_distance: 0.1
   slow_distance: 5
   time_to_accel: 3
+--- !u!114 &894514931180528509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368126306774325593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585b51c6ad070b143a7860c706cb96e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 2
+  min_angle: 10
+  slow_angle: 0.5
+  time_to_target: 0.1
+  target_angle: 0
 --- !u!114 &1368126306774325573
 MonoBehaviour:
   m_ObjectHideFlags: 0

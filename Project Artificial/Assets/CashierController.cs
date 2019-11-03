@@ -22,15 +22,18 @@ public class CashierController : MonoBehaviour
     public BGCcMath walk_to_work_path;
     public BGCcMath go_home_path;
     public Transform spawn_pos;
-
+    SteeringAlign align = null;
+    StaticAlign static_align = null;
     public QueueController queue_controller = null;
     private ClientController client_on_attention = null;
-
+    public GameObject orientation_pos;
     CASHIER_STATE cashier_state;
 
     // Start is called before the first frame update
     void Start()
     {
+        align = GetComponent<SteeringAlign>();
+        static_align = GetComponent<StaticAlign>();
         follow_path = GetComponent<SteeringFollowPath>();
         transform.position = spawn_pos.position;
         follow_path.enabled = true;
@@ -44,6 +47,7 @@ public class CashierController : MonoBehaviour
         if (cashier_state == CASHIER_STATE.CASHIER_WALK_TO_WORK && follow_path.path_completed)
         {
             cashier_state = CASHIER_STATE.CASHIER_WORKING;
+            FixRotation(orientation_pos.transform.localRotation.eulerAngles.y);
         }
         if(cashier_state == CASHIER_STATE.CASHIER_ATTENDING)
         {
@@ -55,8 +59,9 @@ public class CashierController : MonoBehaviour
                 queue_controller.ClientDone(client_on_attention);
             }
         }
-        if(day_cycle.actual_time> 70000 && cashier_state != CASHIER_STATE.CASHIER_GO_HOME)
+        if(day_cycle.actual_time> 79200 && cashier_state != CASHIER_STATE.CASHIER_GO_HOME)
         {
+            FreeRotation();
             cashier_state = CASHIER_STATE.CASHIER_GO_HOME;
             follow_path.SetPath(go_home_path, false);
         }
@@ -81,5 +86,17 @@ public class CashierController : MonoBehaviour
         {
             Debug.LogError("ERORRORO");
         }
+    }
+    public void FixRotation(float angle)
+    {
+        align.enabled = false;
+        static_align.enabled = true;
+        static_align.target_angle = angle;
+    }
+
+    public void FreeRotation()
+    {
+        align.enabled = true;
+        static_align.enabled = false;
     }
 }

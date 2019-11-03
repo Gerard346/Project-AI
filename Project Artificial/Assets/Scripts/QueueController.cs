@@ -7,7 +7,6 @@ public class QueueController : MonoBehaviour
     public GameObject points_queue;
     private List<KeyValuePair<ClientController,int>> clients = null;
     public List<CashierController> cashiers = new List<CashierController>();
-
     private List<List<KeyValuePair<bool, Transform>>> queue_points;
 
     // Start is called before the first frame update
@@ -28,6 +27,15 @@ public class QueueController : MonoBehaviour
             }
 
             queue_points.Add(row_points);
+        }
+    }
+
+    void Update()
+    {
+        if(DayCycle.next_day)
+        {
+            cashiers.Clear();
+            DayCycle.next_day = false;
         }
     }
 
