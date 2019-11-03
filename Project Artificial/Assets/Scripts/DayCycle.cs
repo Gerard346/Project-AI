@@ -19,7 +19,7 @@ public class DayCycle : MonoBehaviour
     public Text time_ui;
     public Text day_ui;
 
-
+    public bool time_to_clean = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +36,7 @@ public class DayCycle : MonoBehaviour
         {
             actual_time = 0;
             days += 1;
+            time_to_clean = true;
         }
 
         if (actual_time < 43200)
