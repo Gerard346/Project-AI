@@ -8,6 +8,7 @@ public class Move : MonoBehaviour
     public Vector3 target;
     //public GameObject aim;
     //public Slider arrow;
+    Animator move_animator;
 
     public float max_mov_velocity = 25.0f;
     public float max_mov_acceleration = 5.0f;
@@ -22,6 +23,7 @@ public class Move : MonoBehaviour
     private void Start()
     {
         target = transform.position;
+        move_animator = gameObject.GetComponent<Animator>();
     }
     // Use this for initialization
     public void SetMovementVelocity(Vector3 vel)
@@ -97,9 +99,10 @@ public class Move : MonoBehaviour
         {
             rotationvelocity[i] = 0.0f;
         }
-        
+
         //rotation_velocity = 0.0f;
         //mov_velocity = Vector3.zero;
+        move_animator.SetFloat("velocity", mov_velocity.magnitude);
     }
 
     public void GoTo(Vector3 target_point)
