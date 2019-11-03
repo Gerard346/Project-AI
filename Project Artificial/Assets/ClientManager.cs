@@ -17,7 +17,7 @@ public class ClientManager : MonoBehaviour
 
     public float spawn_rate = 5.0f;
     public int client_limit = 20;
-
+    public DayCycle day_cycle;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,32 +28,34 @@ public class ClientManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
-        if (timer > spawn_rate)
+        if (day_cycle.store_is_open == true)
         {
-            timer = 0.0f;
-            if (client_container.transform.childCount >= client_limit)
+            if (timer > spawn_rate)
             {
-               
-            }
-            else
-            {
-                int client_index = Random.Range(0, client_prefabs);
-                GameObject client_prefab = Resources.Load<GameObject>("Clients/Client" + client_index);
+                timer = 0.0f;
+                if (client_container.transform.childCount >= client_limit)
+                {
 
-                Vector3 spawn_point = spawn_points.GetChild(Random.Range(0, spawn_points.childCount)).position;
-                Vector3 target_pick_point = pick_point.GetChild(Random.Range(0, pick_point.childCount)).position;
-                Vector3 target_kill_point = kill_point.GetChild(Random.Range(0, kill_point.childCount)).position;
+                }
+                else
+                {
+                    int client_index = Random.Range(0, client_prefabs);
+                    GameObject client_prefab = Resources.Load<GameObject>("Clients/Client" + client_index);
 
-                GameObject new_client = Instantiate(client_prefab);
+                    Vector3 spawn_point = spawn_points.GetChild(Random.Range(0, spawn_points.childCount)).position;
+                    Vector3 target_pick_point = pick_point.GetChild(Random.Range(0, pick_point.childCount)).position;
+                    Vector3 target_kill_point = kill_point.GetChild(Random.Range(0, kill_point.childCount)).position;
 
-                new_client.transform.parent = client_container.transform;
+                    GameObject new_client = Instantiate(client_prefab);
 
-                new_client.transform.position = spawn_point;
+                    new_client.transform.parent = client_container.transform;
 
-                new_client.GetComponent<ClientController>().buy_point = buy_point.position;
-                new_client.GetComponent<ClientController>().pick_point = target_pick_point;
-                new_client.GetComponent<ClientController>().kill_point = target_kill_point;
+                    new_client.transform.position = spawn_point;
+
+                    new_client.GetComponent<ClientController>().buy_point = buy_point.position;
+                    new_client.GetComponent<ClientController>().pick_point = target_pick_point;
+                    new_client.GetComponent<ClientController>().kill_point = target_kill_point;
+                }
             }
         }
     }

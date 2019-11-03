@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class DayCycle : MonoBehaviour
 {
-    public float actual_time;
-    public int total_time_day;
+    public float actual_time = 25000;
     public int days;
     public TimeSpan current_time;
     public TimeSpan current_day;
@@ -20,10 +19,14 @@ public class DayCycle : MonoBehaviour
     public Text day_ui;
 
     public bool time_to_clean = false;
+    public bool store_is_open = false;
+    public bool spawn_employees = false;
+    float total_time_day = 24 * 60 * 60;
+    bool day_has_passed = false;
     // Start is called before the first frame update
     void Start()
     {
-        total_time_day = 24 * 60 * 60;
+        
     }
 
     // Update is called once per frame
@@ -36,17 +39,31 @@ public class DayCycle : MonoBehaviour
         {
             actual_time = 0;
             days += 1;
+            day_has_passed = false;
             time_to_clean = true;
         }
+        if (actual_time > (total_time_day / 3) && day_has_passed == false){
+            spawn_employees = true;
+            day_has_passed = true;
+        }
 
-        if (actual_time < 43200)
+        if(actual_time > total_time_day / 2.5)
         {
-            sun.intensity = 1 - (43200 - actual_time) / 43200;
+            store_is_open = true;
+        }
+        if (actual_time > total_time_day - 20000)
+        {
+            store_is_open = false;
+        }
+
+        if (actual_time < total_time_day/2)
+        {
+            sun.intensity = 1 - ((total_time_day / 2) - actual_time) / total_time_day / 2;
 
         }
         else
         {
-            sun.intensity = 1 - ((43200 - actual_time) / 43200 * -1);
+            sun.intensity = 1 - (((total_time_day / 2) - actual_time) / total_time_day / 2 * -1);
         }
 
         sun.transform.rotation = Quaternion.Euler(new Vector3((actual_time - total_time_day / 4) / total_time_day * 360, 0, 0));

@@ -17,10 +17,11 @@ public class CashierController : MonoBehaviour
 
     private float timer = 0.0f;
     public float attention_time = 3.0f;
-
+    public DayCycle day_cycle;
     SteeringFollowPath follow_path = null;
     public BGCcMath walk_to_work_path;
     public BGCcMath go_home_path;
+    public Transform spawn_pos;
 
     public QueueController queue_controller = null;
     private ClientController client_on_attention = null;
@@ -30,15 +31,17 @@ public class CashierController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //follow_path.enabled = true;
-        //follow_path.SetPath(walk_to_work_path, false);
+        follow_path = GetComponent<SteeringFollowPath>();
+        transform.position = spawn_pos.position;
+        follow_path.enabled = true;
+        follow_path.SetPath(walk_to_work_path, false);
         cashier_state = CASHIER_STATE.CASHIER_WALK_TO_WORK;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (cashier_state == CASHIER_STATE.CASHIER_WALK_TO_WORK)
+        if (cashier_state == CASHIER_STATE.CASHIER_WALK_TO_WORK && follow_path.path_completed)
         {
             cashier_state = CASHIER_STATE.CASHIER_WORKING;
         }
@@ -52,9 +55,14 @@ public class CashierController : MonoBehaviour
                 queue_controller.ClientDone(client_on_attention);
             }
         }
-        if (cashier_state == CASHIER_STATE.CASHIER_GO_HOME)
+        if(day_cycle.actual_time> 70000 && cashier_state != CASHIER_STATE.CASHIER_GO_HOME)
         {
-            gameObject.SetActive(false);
+            cashier_state = CASHIER_STATE.CASHIER_GO_HOME;
+            follow_path.SetPath(go_home_path, false);
+        }
+        if (cashier_state == CASHIER_STATE.CASHIER_GO_HOME && follow_path.path_completed)
+        {
+            Destroy(gameObject, 0.5f);
         }
     }
 

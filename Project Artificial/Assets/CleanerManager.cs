@@ -29,6 +29,7 @@ public class CleanerManager : MonoBehaviour
         if(cycleday.time_to_clean == true)
         {
             GameObject new_cleaner = Instantiate(cleaner);
+            new_cleaner.SetActive(true);
             new_cleaner.transform.position = spawn_cleaner_point.position;
             new_cleaner.GetComponent<CleanerController>().scene_mop = mop;
 
