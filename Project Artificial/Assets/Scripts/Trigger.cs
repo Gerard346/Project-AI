@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class Trigger : MonoBehaviour
 {
-    Animator c_animator;
+    //Animator c_animator;
     Canvas ui;
     Text points;
     int random;
+    AudioSource cash;
 
     void Start()
     {
-        c_animator = gameObject.GetComponentInParent<Animator>();
+        //c_animator = gameObject.GetComponentInParent<Animator>();
         ui = gameObject.GetComponentInChildren<Canvas>();
         points = ui.gameObject.GetComponentInChildren<Text>();
         ui.gameObject.SetActive(false);
+        cash = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,21 +29,25 @@ public class Trigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            c_animator.SetTrigger("CustomerClose");
-            ui.gameObject.SetActive(true);
+           //c_animator.SetTrigger("CustomerClose");
             random = Random.Range(1, 99);
             points.text = "+" + random;
+            ui.gameObject.SetActive(true);
         }
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-            c_animator.SetTrigger("CustomerClose");
+        //if (other.gameObject.CompareTag("Player"))
+           // c_animator.SetTrigger("CustomerClose");
     }
     void OnTriggerExit(Collider other)
     {
         //UI coins
         if (other.gameObject.CompareTag("Player"))
+        {
             ui.gameObject.SetActive(false);
+            cash.Play();
+        }
+
     }
 }
