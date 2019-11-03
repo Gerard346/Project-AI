@@ -29,7 +29,7 @@ public class SteeringSeparation : CombineBehaviours
                 separation = transform.position - col.transform.position;
                 float separation_magnitude = separation.magnitude;
                 separation.Normalize();
-                separation *= -strength.Evaluate(separation_magnitude / search_radius) * move.max_mov_velocity;
+                separation *= -strength.Evaluate(separation_magnitude / search_radius) * move.max_mov_acceleration;
             }
 
             move.AccelerateMovement(separation, priority);

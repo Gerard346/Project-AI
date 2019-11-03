@@ -104,9 +104,4 @@ public class Move : MonoBehaviour
         //mov_velocity = Vector3.zero;
         move_animator.SetFloat("velocity", mov_velocity.magnitude);
     }
-
-    public void GoTo(Vector3 target_point)
-    {
-        GetComponent<PathFinding>().SetTarget(target_point);
-    }
 }

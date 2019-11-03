@@ -8,10 +8,14 @@ public class PathFinding : MonoBehaviour
     NavMeshAgent nav_mesh;
     Move move;
     SteeringArrive arrive;
+    
     Vector3[] path_nav;
     Vector3 path_target;
+    
     int path_pos;
     public float path_next_pos;
+    private bool is_on_target = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +47,7 @@ public class PathFinding : MonoBehaviour
             {
                 enabled = false;
                 path_nav = null;
+                is_on_target = true;
             }
             else
             {
@@ -53,8 +58,9 @@ public class PathFinding : MonoBehaviour
     }
     public void SetTarget(Vector3 target)
     {
-        //Debug.Log("target_set");
         path_target = target;
+        is_on_target = false;
+
         NavMeshPath path_calc = new NavMeshPath();
 
         if(nav_mesh == null)
@@ -79,6 +85,12 @@ public class PathFinding : MonoBehaviour
 
         nav_mesh.enabled = false;
     }
+
+    public bool IsOnTarget()
+    {
+        return is_on_target;
+    }
+
     private void OnDrawGizmos()
     {
         if (path_nav != null)

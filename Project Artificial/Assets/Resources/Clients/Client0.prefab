@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 1388217764437562796}
   - component: {fileID: 9004337454082119574}
   - component: {fileID: 1190633397038878733}
+  - component: {fileID: 6440653110273700860}
   - component: {fileID: 7112933420302548837}
   - component: {fileID: 4273818186803540451}
   - component: {fileID: 1754244304401702815}
@@ -621,7 +622,7 @@ GameObject:
   - component: {fileID: 7585999719731460445}
   - component: {fileID: 6809380618192739436}
   - component: {fileID: 7584627548981922422}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Client0
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -671,7 +672,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: c13c7285ba1087b4282fa4b15e9b31a4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
     are already bound by a Humanoid avatar. These transforms can only be changed
@@ -694,8 +695,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pick_point: {x: 0, y: 0, z: 0}
-  sell_point: {x: 0, y: 0, z: 0}
+  buy_point: {x: 0, y: 0, z: 0}
   kill_point: {x: 0, y: 0, z: 0}
+  queue_controller: {fileID: 0}
+  assigned_queue_point: {fileID: 0}
 --- !u!114 &9004337454082119574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +726,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priority: 5
   min_distance: 0.1
+--- !u!114 &6440653110273700860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3337676408222133896}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585b51c6ad070b143a7860c706cb96e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 4
+  min_angle: 10
+  slow_angle: 40
+  time_to_target: 0.1
+  target_angle: 0
 --- !u!114 &7112933420302548837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,29 +787,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40897044dad07d74d8cd75a4858f96e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 3
+  priority: 4
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  search_radius: 5
+    m_Bits: 256
+  search_radius: 10.81
   strength:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -808,11 +828,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae55cdc1c8521024cbc512ebd6756574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 4
+  priority: 3
   mask:
     serializedVersion: 2
     m_Bits: 4294967295
-  avoid_distance: 5
+  avoid_distance: 1
   rays:
   - direction: {x: 0.3, y: 0, z: 0.4}
     length: 2

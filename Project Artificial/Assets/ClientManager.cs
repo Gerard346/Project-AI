@@ -8,7 +8,7 @@ public class ClientManager : MonoBehaviour
 
     public Transform spawn_points;
     public Transform pick_point;
-    public Transform sell_point;
+    public Transform buy_point;
     public Transform kill_point;
 
     public int client_prefabs = 0;
@@ -51,7 +51,7 @@ public class ClientManager : MonoBehaviour
 
                 new_client.transform.position = spawn_point;
 
-                new_client.GetComponent<ClientController>().sell_point = sell_point.position;
+                new_client.GetComponent<ClientController>().buy_point = buy_point.position;
                 new_client.GetComponent<ClientController>().pick_point = target_pick_point;
                 new_client.GetComponent<ClientController>().kill_point = target_kill_point;
             }
