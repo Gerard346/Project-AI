@@ -1,4 +1,4 @@
-# Grocery Store AI
+﻿# Grocery Store AI
 
 Grocery Store AI is an Artificial Intelligence based game made with Unity developed for a university project in CITM UPC (Terrasa, Spain) in our degree in Videogame Developement and Design.
 
@@ -6,6 +6,18 @@ Grocery Store AI is an Artificial Intelligence based game made with Unity develo
 
 Grocery Store AI has 3 entities; cashier, client and cleaner that complete their function in a usual grocery store by our own programmed Steering Behaviours to move across, in and out of the store with its corresponding day/night cycle.
 
+###Cashier
+
+Spawn, Paths to his cash and waits till his turn is finished. Then goes home around 10 o'clock at night.
+
+###Client
+
+Spawns when the shop is open, goes to inside the shop, picks an area to pick an object, then wait his turn in the queue to buy the thing he picked, when a spot is clear, he goes in and buys. He stays there a bit with the cashier, waiting his change. After he got the change, he goes home.
+
+### Cleaner
+At 12::00 at night he comes to clean the shop, after he cleaned all the shop he goes home.
+
+###
 ## Controls
 
 * WASD: Camera Movement
