@@ -9,9 +9,10 @@ public class Trigger : MonoBehaviour
     Canvas ui;
     Text points;
     int random;
-    AudioSource cash;
+    public static int coin;
+    public static AudioSource cash;
     bool collided = false;
-    bool bought = false;
+    public static bool needs_adding = false;
 
     void Start()
     {
@@ -37,11 +38,11 @@ public class Trigger : MonoBehaviour
             {
                 //c_animator.SetTrigger("CustomerClose");
                 random = Random.Range(1, 99);
+                coin = random;
                 points.text = "+" + random;
                 ui.gameObject.SetActive(true);
-                bought = true;
+                needs_adding = true;
             }
-            
         }
     }
     void OnTriggerStay(Collider other)
@@ -55,13 +56,7 @@ public class Trigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             collided = false;
-            if (bought == true)
-            {
-                ui.gameObject.SetActive(false);
-                cash.Play();
-                bought = false;
-            }
+            ui.gameObject.SetActive(false);
         }
-
     }
 }
