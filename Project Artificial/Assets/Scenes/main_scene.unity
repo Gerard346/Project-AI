@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1276,7 +1276,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91174835}
   m_LocalRotation: {x: -0, y: 0.9671965, z: -0, w: 0.2540296}
-  m_LocalPosition: {x: 0, y: 0, z: 1.57}
+  m_LocalPosition: {x: 0, y: 0, z: 2.19}
   m_LocalScale: {x: 0.0023700001, y: 0.019112902, z: 0.0023700001}
   m_Children:
   - {fileID: 543680043}
@@ -1285,7 +1285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 150.56801, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.19, y: 14.7}
+  m_AnchoredPosition: {x: 1.84, y: 14.7}
   m_SizeDelta: {x: 883, y: 418}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &91174837
@@ -16454,16 +16454,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5728136961917908469}
     m_Modifications:
-    - target: {fileID: 1368126306774325593, guid: cacdbe30d999409498018e4f78691138,
-        type: 3}
-      propertyPath: m_Name
-      value: cashier_2 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1368126306774325593, guid: cacdbe30d999409498018e4f78691138,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1368126306774325568, guid: cacdbe30d999409498018e4f78691138,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16517,6 +16507,16 @@ PrefabInstance:
     - target: {fileID: 1368126306774325568, guid: cacdbe30d999409498018e4f78691138,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368126306774325593, guid: cacdbe30d999409498018e4f78691138,
+        type: 3}
+      propertyPath: m_Name
+      value: cashier_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368126306774325593, guid: cacdbe30d999409498018e4f78691138,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1368126306774325594, guid: cacdbe30d999409498018e4f78691138,
@@ -17789,7 +17789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1827579753
 Transform:
   m_ObjectHideFlags: 0
@@ -17798,7 +17798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827579752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.923462, y: -2.06, z: 18.078724}
+  m_LocalPosition: {x: 4.41, y: -2.06, z: 17.1}
   m_LocalScale: {x: 1, y: 0.124, z: 1}
   m_Children:
   - {fileID: 91174836}
@@ -18785,7 +18785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1890713394
 Transform:
   m_ObjectHideFlags: 0
@@ -21580,7 +21580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2103392547
 Transform:
   m_ObjectHideFlags: 0
@@ -22344,16 +22344,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5728136961917908469}
     m_Modifications:
-    - target: {fileID: 1368126306774325593, guid: cacdbe30d999409498018e4f78691138,
-        type: 3}
-      propertyPath: m_Name
-      value: cashier_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1368126306774325593, guid: cacdbe30d999409498018e4f78691138,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1368126306774325568, guid: cacdbe30d999409498018e4f78691138,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22407,6 +22397,16 @@ PrefabInstance:
     - target: {fileID: 1368126306774325568, guid: cacdbe30d999409498018e4f78691138,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368126306774325593, guid: cacdbe30d999409498018e4f78691138,
+        type: 3}
+      propertyPath: m_Name
+      value: cashier_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368126306774325593, guid: cacdbe30d999409498018e4f78691138,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1368126306774325594, guid: cacdbe30d999409498018e4f78691138,
@@ -23235,16 +23235,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5728136961565185418}
     m_Modifications:
-    - target: {fileID: 6104565451909842340, guid: a4531b1f849bd2a4fbdaf7691804d8ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Cleaner
-      objectReference: {fileID: 0}
-    - target: {fileID: 6104565451909842340, guid: a4531b1f849bd2a4fbdaf7691804d8ad,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6104565451909683588, guid: a4531b1f849bd2a4fbdaf7691804d8ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23298,6 +23288,16 @@ PrefabInstance:
     - target: {fileID: 6104565451909683588, guid: a4531b1f849bd2a4fbdaf7691804d8ad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104565451909842340, guid: a4531b1f849bd2a4fbdaf7691804d8ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Cleaner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104565451909842340, guid: a4531b1f849bd2a4fbdaf7691804d8ad,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6104565451909842336, guid: a4531b1f849bd2a4fbdaf7691804d8ad,

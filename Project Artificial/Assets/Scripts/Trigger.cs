@@ -10,6 +10,8 @@ public class Trigger : MonoBehaviour
     Text points;
     int random;
     AudioSource cash;
+    bool collided = false;
+    bool bought = false;
 
     void Start()
     {
@@ -25,14 +27,21 @@ public class Trigger : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    IEnumerator OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-           //c_animator.SetTrigger("CustomerClose");
-            random = Random.Range(1, 99);
-            points.text = "+" + random;
-            ui.gameObject.SetActive(true);
+            collided = true; 
+            yield return new WaitForSeconds(4); 
+            if (collided == true) 
+            {
+                //c_animator.SetTrigger("CustomerClose");
+                random = Random.Range(1, 99);
+                points.text = "+" + random;
+                ui.gameObject.SetActive(true);
+                bought = true;
+            }
+            
         }
     }
     void OnTriggerStay(Collider other)
@@ -45,8 +54,13 @@ public class Trigger : MonoBehaviour
         //UI coins
         if (other.gameObject.CompareTag("Player"))
         {
-            ui.gameObject.SetActive(false);
-            cash.Play();
+            collided = false;
+            if (bought == true)
+            {
+                ui.gameObject.SetActive(false);
+                cash.Play();
+                bought = false;
+            }
         }
 
     }
