@@ -8,6 +8,7 @@ public class ClientController : MonoBehaviour
     {
         CLIENT_IDLE = 0,
         CLIENT_GO_PICK,
+        CLIENT_WAINTING_FOR_HELP,
         CLIENT_GO_BUY,
         CLIENT_GO_BUYING,
         CLIENT_WAIT_BUYING,
@@ -41,7 +42,7 @@ public class ClientController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         if(client_state == CLIENT_STATE.CLIENT_GO_PICK && pathfinding.IsOnTarget())
         {
             client_state = CLIENT_STATE.CLIENT_GO_BUY;
@@ -61,7 +62,7 @@ public class ClientController : MonoBehaviour
         else if (client_state == CLIENT_STATE.CLIENT_GO_KILL && pathfinding.IsOnTarget())
         {
             Destroy(gameObject);
-        }
+        }*/
     }
     public CLIENT_STATE client_state
     {

@@ -28,10 +28,10 @@ public class ClientManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (day_cycle.store_is_open == true)
+       /* if (day_cycle.store_is_open == true)
         {
             if (timer > spawn_rate)
-            {
+            {*/
                 timer = 0.0f;
                 if (client_container.transform.childCount >= client_limit)
                 {
@@ -56,7 +56,7 @@ public class ClientManager : MonoBehaviour
                     new_client.GetComponent<ClientController>().pick_point = target_pick_point;
                     new_client.GetComponent<ClientController>().kill_point = target_kill_point;
                 }
-            }
-        }
+            //}
+        //}
     }
 }

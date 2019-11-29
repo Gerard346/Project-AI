@@ -39,10 +39,8 @@ public class QueueController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider coll)
+    public void ClientIn(ClientController target)
     {
-        ClientController target = coll.GetComponentInParent<ClientController>();
-
         if (target != null && target.client_state == ClientController.CLIENT_STATE.CLIENT_GO_BUY)
         {
             target.client_state = ClientController.CLIENT_STATE.CLIENT_GO_BUYING;
@@ -71,7 +69,7 @@ public class QueueController : MonoBehaviour
         }
     }
 
-    public void ClientOnPoint(ClientController client)
+    public bool ClientOnPoint(ClientController client)
     {
         if(client.assigned_queue_point.GetSiblingIndex() == 0)
         {
@@ -80,10 +78,11 @@ public class QueueController : MonoBehaviour
                 if(clients[i].Key == client)
                 {
                     cashiers[clients[i].Value].AttendClient(client);
-                    break;
+                    return true;
                 }
             }
         }
+        return false;
     }
 
     public void ClientDone(ClientController client)
