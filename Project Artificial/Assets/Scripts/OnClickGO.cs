@@ -26,7 +26,7 @@ public class OnClickGO : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if ((hit.point.x < 21 && hit.point.x > 17) && (hit.point.y < -1 && hit.point.y > -3) && (hit.point.z < -6.2 && hit.point.z > -7.5) && cashier1_active == false)
+                if ((hit.point.x < 21 && hit.point.x > 17) && (hit.point.z < -6.2 && hit.point.z > -7.5) && cashier1_active == false)
                 {
                     //TODO
                     //set active false X 
@@ -37,7 +37,7 @@ public class OnClickGO : MonoBehaviour
                         cashier1_active = true;
                     }
                 }
-                else if ((hit.point.x < 21 && hit.point.x > 17.5) && (hit.point.y < -1 && hit.point.y > -3) && (hit.point.z < 14.3 && hit.point.z > 13.2) && cashier2_active == false)
+                else if ((hit.point.x < 21 && hit.point.x > 17.5) && (hit.point.z < 14.3 && hit.point.z > 13.2) && cashier2_active == false)
                 {
                     //TODO
                     //set active false X
@@ -62,7 +62,7 @@ public class OnClickGO : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
 
-                if ((hit.point.x < 45) && (hit.point.y < -1 && hit.point.y > -3) && (hit.point.z < 26 && hit.point.z > -45))
+                if ((hit.point.x < 45) && (hit.point.z < 26 && hit.point.z > -45) || hit.collider.tag != "Untagged")
                 {
                     //TODO
                     //set active true X
@@ -71,7 +71,6 @@ public class OnClickGO : MonoBehaviour
                 {
                     //TODO
                     //set active false X
-                    //separation between cars 
                     //(change prefab)
 
                     if (Input.GetMouseButtonDown(0))
