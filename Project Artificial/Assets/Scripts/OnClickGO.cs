@@ -14,6 +14,15 @@ public class OnClickGO : MonoBehaviour
 
     public RawImage red_x;
 
+    public Vector3 center_cash1;
+    public Vector3 size_cash1;
+
+    public Vector3 center_cash2;
+    public Vector3 size_cash2;
+
+    public Vector3 center_park;
+    public Vector3 size_park;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +39,7 @@ public class OnClickGO : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if ((hit.point.x < 21 && hit.point.x > 17) && (hit.point.z < -6.2 && hit.point.z > -7.5) && cashier1_active == false)
+                if (isInside(center_cash1, size_cash1, hit.point) && cashier1_active == false)
                 {
 
                     red_x.gameObject.SetActive(false);
@@ -41,7 +50,7 @@ public class OnClickGO : MonoBehaviour
                         cashier1_active = true;
                     }
                 }
-                else if ((hit.point.x < 21 && hit.point.x > 17.5) && (hit.point.z < 14.3 && hit.point.z > 13.2) && cashier2_active == false)
+                else if (isInside(center_cash2, size_cash2, hit.point) && cashier2_active == false)
                 {
                  
                     red_x.gameObject.SetActive(false);
@@ -65,8 +74,7 @@ public class OnClickGO : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-
-                if ((hit.point.x < 45) && (hit.point.z < 26 && hit.point.z > -45) || hit.collider.tag != "Untagged")
+                if (isInside(center_park, size_park, hit.point) || hit.collider.tag != "Untagged")
                 {
                     red_x.transform.position = Input.mousePosition;
                     red_x.gameObject.SetActive(true);
@@ -84,6 +92,26 @@ public class OnClickGO : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(center_cash1, size_cash1);
+        Gizmos.DrawCube(center_cash2, size_cash2);
+        Gizmos.DrawCube(center_park, size_park);
+    }
+
+    bool isInside(Vector3 center, Vector3 size, Vector3 positionRay)
+    {
+        if((center.x + (size.x / 2)) > positionRay.x && positionRay.x > (center.x - (size.x / 2)) && (center.y + (size.y / 2)) > positionRay.y && positionRay.y > (center.y - (size.y / 2)) && (center.z + (size.z / 2)) > positionRay.z && positionRay.z > (center.z - (size.z / 2)))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
