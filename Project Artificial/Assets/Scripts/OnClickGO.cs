@@ -81,14 +81,11 @@ public class OnClickGO : MonoBehaviour
                 }
                 else
                 {
-                    //TODO 
-                    //(change prefab to a parking and add&edit box collider + change tag to it)
-
                     red_x.gameObject.SetActive(false);
 
                     if (Input.GetMouseButtonDown(0))
                     {
-                        Instantiate(prefab2, hit.point, Quaternion.identity);
+                        Instantiate(prefab2, hit.point, Quaternion.AngleAxis(-90, new Vector3(1, 0, 0)));
                     }
                 }
             }
