@@ -22,14 +22,14 @@ public class DayCycle : MonoBehaviour
     static public bool next_day = false;
     public bool time_to_clean = false;
     public bool store_is_open = false;
-    public bool spawn_employees = false;
+    public bool spawn_employees = true;
     float total_time_day = 24 * 60 * 60;
     bool day_has_passed = false;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+           spawn_employees = true;
+}
 
     // Update is called once per frame
     void Update()
@@ -46,10 +46,10 @@ public class DayCycle : MonoBehaviour
             time_to_clean = true;
             next_day = true;
         }
-        if (actual_time > (total_time_day / 3) && day_has_passed == false){
+        /*if (actual_time > (total_time_day / 3) && day_has_passed == false){
             spawn_employees = true;
             day_has_passed = true;
-        }
+        }*/
 
         if(actual_time > total_time_day / 2.5)
         {

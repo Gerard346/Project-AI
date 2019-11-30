@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using NodeCanvas.Framework;
+using System;
 using UnityEngine;
-using NodeCanvas.Framework;
+
 public class GoToQueue : ActionTask
 {
     float timer = 0.0f;
@@ -9,18 +9,25 @@ public class GoToQueue : ActionTask
     // Start is called before the first frame update
     protected override void OnExecute()
     {
-        agent.gameObject.GetComponent<ClientController>().client_state = ClientController.CLIENT_STATE.CLIENT_WAIT_BUYING;
-        agent.gameObject.GetComponent<QueueController>().ClientIn(agent.gameObject.GetComponent<ClientController>());
+        agent.gameObject.GetComponent<ClientController>().client_state = ClientController.CLIENT_STATE.CLIENT_GO_BUY;
+        blackboard.GetValue<QueueController>("myQueueController").ClientIn(agent.gameObject.GetComponent<ClientController>());
     }
     protected override void OnUpdate()
     {
         if (agent.gameObject.GetComponent<PathFinding>().IsOnTarget())
         {
-            agent.gameObject.GetComponent<ClientController>().client_state = ClientController.CLIENT_STATE.CLIENT_WAIT_BUYING;
-            if (agent.gameObject.GetComponent<QueueController>().ClientOnPoint(agent.gameObject.GetComponent<ClientController>()))
+            if (agent.gameObject.GetComponent<ClientController>().queue_controller.ClientOnPoint(agent.gameObject.GetComponent<ClientController>()))
             {
                 EndAction(true);
             }
+        }
+
+        timer += Time.deltaTime;
+
+        if(timer > max_timer)
+        {
+            blackboard.SetValue("OutOfTime", true);
+            EndAction(true);
         }
 
     }

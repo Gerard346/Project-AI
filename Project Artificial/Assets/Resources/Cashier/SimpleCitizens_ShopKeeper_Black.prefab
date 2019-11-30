@@ -1744,6 +1744,8 @@ GameObject:
   - component: {fileID: 700967814713918489}
   - component: {fileID: 3280026387336101795}
   - component: {fileID: -4635122227337761280}
+  - component: {fileID: -517732232266536340}
+  - component: {fileID: -7831416452078329588}
   m_Layer: 0
   m_Name: SimpleCitizens_ShopKeeper_Black
   m_TagString: Untagged
@@ -1867,6 +1869,41 @@ MonoBehaviour:
   max_rot_acceleration: 1
   max_rot_speed: 10
   mov_velocity: {x: 0, y: 0, z: 0}
+--- !u!114 &-517732232266536340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4273015180748468445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundGraphSerialization: 
+  boundGraphObjectReferences: []
+  enableAction: 0
+  disableAction: 0
+  _graph: {fileID: 11400000, guid: ce1c2e6303970ee409e6eea0ff650007, type: 2}
+  _blackboard: {fileID: -7831416452078329588}
+--- !u!114 &-7831416452078329588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4273015180748468445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedBlackboard: '{"_variables":{"StoreIsOpened":{"_name":"StoreIsOpened","_id":"506a9ba1-e8ad-4221-b085-0d01e778487f","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ClientsInsideStore":{"_name":"ClientsInsideStore","_id":"ef2ae63f-242f-4a8b-b9e0-f9bf79d60d65","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"TimeToGoHome":{"_name":"TimeToGoHome","_id":"516f4f80-c6c7-48c2-8b2d-e0b508f2bbe3","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
+  _objectReferences: []
 --- !u!1 &4273015180748468447
 GameObject:
   m_ObjectHideFlags: 0

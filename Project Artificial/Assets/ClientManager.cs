@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using NodeCanvas.Framework;
 public class ClientManager : MonoBehaviour
 {
     public GameObject client_container = null;
@@ -18,11 +16,8 @@ public class ClientManager : MonoBehaviour
     public float spawn_rate = 5.0f;
     public int client_limit = 20;
     public DayCycle day_cycle;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    public QueueController queue_controller;
 
     // Update is called once per frame
     void Update()
@@ -47,6 +42,8 @@ public class ClientManager : MonoBehaviour
                     Vector3 target_kill_point = kill_point.GetChild(Random.Range(0, kill_point.childCount)).position;
 
                     GameObject new_client = Instantiate(client_prefab);
+
+                    new_client.GetComponent<Blackboard>().SetValue("myQueueController", queue_controller);
 
                     new_client.transform.parent = client_container.transform;
 

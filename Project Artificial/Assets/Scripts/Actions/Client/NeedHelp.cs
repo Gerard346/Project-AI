@@ -23,5 +23,10 @@ public class NeedHelp : ActionTask
             blackboard.SetValue("Picked", true);
             EndAction(true);
         }
+
+        if(blackboard.GetValue<bool>("NeedHelp"))
+        {
+            EndAction(true);
+        }
     }
 }

@@ -77,9 +77,21 @@ public class QueueController : MonoBehaviour
             {
                 if(clients[i].Key == client)
                 {
-                    cashiers[clients[i].Value].AttendClient(client);
                     return true;
                 }
+            }
+        }
+        return false;
+    }
+
+    public bool AttendClient(ClientController client)
+    {
+        for (int i = 0; i < clients.Count; i++)
+        {
+            if (clients[i].Key == client)
+            {
+                cashiers[clients[i].Value].AttendClient(client);
+                return true;
             }
         }
         return false;

@@ -16,8 +16,10 @@ public class ChoosePickNeedHelp : ActionTask
 
         if (i > 80)
         {
-            blackboard.SetValue("NeedHelp", true);
-            blackboard.SetValue("Picked", false);
+            //blackboard.SetValue("NeedHelp", true);
+            //blackboard.SetValue("Picked", false);
+            blackboard.SetValue("NeedHelp", false);
+            blackboard.SetValue("Picked", true);
         }
         else
         {
