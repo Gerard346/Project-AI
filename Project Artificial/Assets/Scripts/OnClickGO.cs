@@ -89,7 +89,7 @@ public class OnClickGO : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         Instantiate(prefab2, hit.point, Quaternion.AngleAxis(-90, new Vector3(1, 0, 0)));
-                        ClientManager.client_limit += 1;
+                        ClientManager.client_limit += 6;
                     }
                 }
             }
