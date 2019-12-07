@@ -5,19 +5,22 @@ using NodeCanvas.Framework;
 
 public class WorkCleaner : ActionTask
 {
+    private CleanerController controller;
     // Start is called before the first frame update
     protected override void OnExecute()
     {
-        agent.gameObject.GetComponent<CleanerController>().cleaner_state = CleanerController.CLEANER_STATE.CLEANER_WORKING;
-        agent.gameObject.GetComponent<CleanerController>().mop.SetActive(true);
-        agent.gameObject.GetComponent<CleanerController>().follow_path.SetPath(agent.gameObject.GetComponent<CleanerController>().working_path, false);
+        controller = agent.gameObject.GetComponent<CleanerController>();
+        controller.cleaner_state = CleanerController.CLEANER_STATE.CLEANER_WORKING;
+        controller.mop.SetActive(true);
+        controller.follow_path.SetPath(agent.gameObject.GetComponent<CleanerController>().working_path, false);
     }
 
     // Update is called once per frame
     protected override void OnUpdate()
     {
-        if (agent.gameObject.GetComponent<CleanerController>().cleaner_state == CleanerController.CLEANER_STATE.CLEANER_WORKING && agent.gameObject.GetComponent<CleanerController>().follow_path.path_completed)
+        if (controller.cleaner_state == CleanerController.CLEANER_STATE.CLEANER_WORKING && controller.follow_path.path_completed)
         {
+            blackboard.SetValue("CleaningDone", true);
             EndAction(true);
         }
     }

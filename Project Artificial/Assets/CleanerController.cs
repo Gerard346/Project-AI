@@ -36,7 +36,7 @@ public class CleanerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(cleaner_state == CLEANER_STATE.CLEANER_START_WORKING && follow_path.path_completed)
+       /* if(cleaner_state == CLEANER_STATE.CLEANER_START_WORKING && follow_path.path_completed)
         {
             cleaner_state = CLEANER_STATE.CLEANER_WORKING;
             mop.SetActive(true);
@@ -53,6 +53,6 @@ public class CleanerController : MonoBehaviour
         else if(cleaner_state == CLEANER_STATE.CLEANER_END_WOKING && follow_path.path_completed)
         {
             Destroy(gameObject,0.5f);
-        }
+        }*/
     }
 }

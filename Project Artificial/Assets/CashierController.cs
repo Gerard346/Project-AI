@@ -27,7 +27,7 @@ public class CashierController : MonoBehaviour
     }
 
     
-    SteeringFollowPath follow_path = null;
+    public SteeringFollowPath follow_path = null;
     public BGCcMath walk_to_work_path;
     public BGCcMath go_home_path;
     public Transform spawn_pos;
@@ -57,7 +57,7 @@ public class CashierController : MonoBehaviour
         if (cashier_state == CASHIER_STATE.CASHIER_WALK_TO_WORK && follow_path.path_completed)
         {
             cashier_state = CASHIER_STATE.CASHIER_WORKING;
-            FixRotation(orientation_pos.transform.localRotation.eulerAngles.y);
+            FixRotationWithAngle(orientation_pos.transform.localRotation.eulerAngles.y);
         }
         /*if(cashier_state == CASHIER_STATE.CASHIER_ATTENDING)
         {
@@ -93,11 +93,11 @@ public class CashierController : MonoBehaviour
 
     public void FixRotation()
     {
-        FixRotation(orientation_pos.transform.localRotation.eulerAngles.y);
+        FixRotationWithAngle(orientation_pos.transform.localRotation.eulerAngles.y);
         client_on_attention.FixRotation(client_on_attention.assigned_queue_point.localRotation.eulerAngles.y);
     }
 
-    private void FixRotation(float angle)
+    private void FixRotationWithAngle(float angle)
     {
         align.enabled = false;
         static_align.enabled = true;
