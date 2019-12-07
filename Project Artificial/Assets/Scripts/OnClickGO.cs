@@ -33,6 +33,7 @@ public class OnClickGO : MonoBehaviour
     void Update()
     {
         red_x.gameObject.SetActive(false);
+        /*
         if (Input.GetKey(KeyCode.Alpha1)) 
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -68,7 +69,9 @@ public class OnClickGO : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKey(KeyCode.Alpha2))
+        */
+        //else 
+        if (Input.GetKey(KeyCode.Alpha2))
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -86,6 +89,7 @@ public class OnClickGO : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         Instantiate(prefab2, hit.point, Quaternion.AngleAxis(-90, new Vector3(1, 0, 0)));
+                        ClientManager.client_limit += 6;
                     }
                 }
             }

@@ -6295,7 +6295,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475611196}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5314b3475f59cb44ca31f0a38764bfb3, type: 3}
@@ -18891,7 +18891,6 @@ MonoBehaviour:
   kill_point: {fileID: 216953064}
   client_prefabs: 1
   spawn_rate: 3
-  client_limit: 1
   day_cycle: {fileID: 475611198}
   queue_controller: {fileID: 0}
 --- !u!1001 &1778320660
@@ -24957,7 +24956,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5728136961647268660
 Transform:
   m_ObjectHideFlags: 0
@@ -25029,7 +25028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5728136961917908469
 Transform:
   m_ObjectHideFlags: 0
