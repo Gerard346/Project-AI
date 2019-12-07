@@ -13,7 +13,7 @@ public class CleanerController : MonoBehaviour
         CLEANER_END_WOKING
     };
 
-    SteeringFollowPath follow_path;
+    public SteeringFollowPath follow_path;
     public GameObject mop;
     public GameObject scene_mop;
     public BGCcMath start_working_path;

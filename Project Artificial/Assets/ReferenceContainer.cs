@@ -6,6 +6,7 @@ public class ReferenceContainer : MonoBehaviour{
     public DayCycle day_cycle;
     public QueueController queue_controller;
     public ClientManager manager_client;
+    public CleanerController controller_cleaner;
     void Start()
     {
         References.data = this;

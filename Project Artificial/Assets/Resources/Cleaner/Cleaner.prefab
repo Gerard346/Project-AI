@@ -180,6 +180,8 @@ GameObject:
   - component: {fileID: 1512331792492894557}
   - component: {fileID: 6104565451909842342}
   - component: {fileID: 6104565451909842341}
+  - component: {fileID: -5355092487694613816}
+  - component: {fileID: -6068589453671591270}
   m_Layer: 8
   m_Name: Cleaner
   m_TagString: Untagged
@@ -249,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b55f3cfeeaf5c94dbad2155de76a43f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  follow_path: {fileID: 0}
   mop: {fileID: 0}
   scene_mop: {fileID: 0}
   start_working_path: {fileID: 0}
@@ -377,6 +380,40 @@ MonoBehaviour:
   max_rot_acceleration: 50
   max_rot_speed: 100
   mov_velocity: {x: 0, y: 0, z: 0}
+--- !u!114 &-5355092487694613816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104565451909842340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundGraphSerialization: 
+  boundGraphObjectReferences: []
+  enableAction: 0
+  disableAction: 0
+  _graph: {fileID: 11400000, guid: e8320eadd05f738429800cf317ea4ccf, type: 2}
+  _blackboard: {fileID: -6068589453671591270}
+--- !u!114 &-6068589453671591270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104565451909842340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedBlackboard: '{"_variables":{"TimeToClean":{"_name":"TimeToClean","_id":"0d069e5b-eaac-4710-b00e-fbdf990b5b9d","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"CleaningDone":{"_name":"CleaningDone","_id":"d7823d7f-3002-43a5-9751-bcff0b312bc6","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
+  _objectReferences: []
 --- !u!1 &6104565451909842344
 GameObject:
   m_ObjectHideFlags: 0
