@@ -14,7 +14,7 @@ public class ClientManager : MonoBehaviour
     float timer = 0.0f;
 
     public float spawn_rate = 5.0f;
-    public static int client_limit = 20;
+    public int client_limit = 7;
     public DayCycle day_cycle;
 
     public QueueController queue_controller;

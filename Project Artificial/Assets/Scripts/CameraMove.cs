@@ -19,7 +19,7 @@ public class CameraMove : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            if (transform.position.x < (initial_pos.x + 15))
+            //if (transform.position.x < (initial_pos.x + 15))
             {
                 transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
             }
@@ -27,7 +27,7 @@ public class CameraMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            if (transform.position.z < (initial_pos.z + 10))
+            //if (transform.position.z < (initial_pos.z + 10))
             {
                 transform.position += new Vector3(0, 0, speed * Time.deltaTime);
             }
@@ -35,7 +35,7 @@ public class CameraMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            if (transform.position.z > (initial_pos.z - 40))
+           // if (transform.position.z > (initial_pos.z - 40))
             {
                 transform.position -= new Vector3(0, 0, speed * Time.deltaTime);
             }
@@ -43,7 +43,7 @@ public class CameraMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S))
         {
-            if (transform.position.x > (initial_pos.x - 10))
+            //if (transform.position.x > (initial_pos.x - 10))
             {
                 transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
             }
