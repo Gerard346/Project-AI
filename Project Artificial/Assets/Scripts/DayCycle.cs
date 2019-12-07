@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using NodeCanvas.Framework;
 
 public class DayCycle : MonoBehaviour
 {
@@ -25,11 +26,15 @@ public class DayCycle : MonoBehaviour
     public bool spawn_employees = true;
     float total_time_day = 24 * 60 * 60;
     bool day_has_passed = false;
+
+    [Header("Entities")]
+    public GameObject scene_entities = null;
+
     // Start is called before the first frame update
     void Start()
     {
-           spawn_employees = true;
-}
+        spawn_employees = true;
+    }
 
     // Update is called once per frame
     void Update()
@@ -54,6 +59,13 @@ public class DayCycle : MonoBehaviour
         if(actual_time > total_time_day / 2.5)
         {
             store_is_open = true;
+
+            Blackboard[] entities_blackboard = scene_entities.GetComponentsInChildren<Blackboard>(true);
+            foreach(Blackboard entity_blackboard in entities_blackboard)
+            {
+                entity_blackboard.SetValue("store_is_opened", true);
+            }
+
         }
         if (actual_time > 62000)
         {
