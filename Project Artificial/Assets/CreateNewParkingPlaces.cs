@@ -45,7 +45,10 @@ public class CreateNewParkingPlaces : MonoBehaviour
                 temp.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 Vector3 temp_v = new Vector3(0, (temp.GetComponent<Collider>().bounds.size.y / 2), 0);
                 temp.transform.position += temp_v;
-                References.data.manager_client.client_limit += 1;
+                temp.GetComponents<BoxCollider>()[0].enabled = true;
+                temp.GetComponents<BoxCollider>()[1].enabled = true;
+
+                References.data.manager_client.spawn_points.Add(temp.transform.Find("SpawnPoint").position);
             }
         }
 

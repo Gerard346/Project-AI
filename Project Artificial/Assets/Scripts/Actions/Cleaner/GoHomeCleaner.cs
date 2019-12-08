@@ -11,6 +11,7 @@ public class GoHomeCleaner : ActionTask
         controller = agent.gameObject.GetComponent<CleanerController>();
         controller.cleaner_state = CleanerController.CLEANER_STATE.CLEANER_END_WOKING;
         controller.mop.SetActive(false);
+        controller.scene_mop.SetActive(true);
         controller.follow_path.SetPath(agent.gameObject.GetComponent<CleanerController>().end_working_path, false);
     }
 
@@ -20,6 +21,8 @@ public class GoHomeCleaner : ActionTask
         if (controller.cleaner_state == CleanerController.CLEANER_STATE.CLEANER_END_WOKING && controller.follow_path.path_completed)
         {
             //DESTROY
+            GameObject.Destroy(agent.gameObject);
+
             EndAction(true);
         }
     }

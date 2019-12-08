@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6104565450961983840}
   - component: {fileID: 6104565450958601558}
   - component: {fileID: 6104565450959682508}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MopCleaner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683586}
   - component: {fileID: 6104565451921410208}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cap_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,13 +182,13 @@ GameObject:
   - component: {fileID: 6104565451909842341}
   - component: {fileID: -5355092487694613816}
   - component: {fileID: -6068589453671591270}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Cleaner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6104565451909683588
 Transform:
   m_ObjectHideFlags: 0
@@ -196,8 +196,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6104565451909842340}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 32.656868, y: -2.011073, z: -7.71204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6104565450961983840}
@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b55f3cfeeaf5c94dbad2155de76a43f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  follow_path: {fileID: 0}
-  mop: {fileID: 0}
+  follow_path: {fileID: 6104565451909842342}
+  mop: {fileID: 6104565450961803648}
   scene_mop: {fileID: 0}
   start_working_path: {fileID: 0}
   working_path: {fileID: 0}
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priority: 2
   min_angle: 10
-  slow_angle: 1.5
+  slow_angle: 0.5
   time_to_target: 0.1
 --- !u!114 &5040002493124107877
 MonoBehaviour:
@@ -352,12 +352,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6104565451909842340}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fdb74c0d43ad45458532f1a1ff22e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratio_increment: 0.1
+  ratio_increment: 0.005
   min_distance: 1
   path_completed: 0
 --- !u!114 &6104565451909842341
@@ -377,8 +377,8 @@ MonoBehaviour:
   max_mov_velocity: 20
   max_mov_acceleration: 2
   rotation_velocity: 0
-  max_rot_acceleration: 50
-  max_rot_speed: 100
+  max_rot_acceleration: 100
+  max_rot_speed: 200
   mov_velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &-5355092487694613816
 MonoBehaviour:
@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683592}
   - component: {fileID: 6104565451921410222}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Emo_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683594}
   - component: {fileID: 6104565451921410216}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Footballer_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683596}
   - component: {fileID: 6104565451921410210}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cheerleader_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683598}
   - component: {fileID: 6104565451921410220}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Clown_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683600}
   - component: {fileID: 6104565451921410230}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hippie_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,7 +846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683602}
   - component: {fileID: 6104565451921410224}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Luchador_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,7 +929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683604}
   - component: {fileID: 6104565451921410218}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Grandma_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1015,7 +1015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683606}
   - component: {fileID: 6104565451921410228}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hair_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683608}
   - component: {fileID: 6104565451921410236}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Runner_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683610}
   - component: {fileID: 6104565451921410238}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShopKeeper_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1264,7 +1264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683612}
   - component: {fileID: 6104565451921410226}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mountie_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683614}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Root_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683622}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1408,7 +1408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683636}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spine_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,7 +1442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683620}
   - component: {fileID: 6104565451921410232}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tourist_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683654}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hips_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1558,7 +1558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683638}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperArm_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1589,7 +1589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683632}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerArm_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1620,7 +1620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683644}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1651,7 +1651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683646}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hat_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1681,7 +1681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683642}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerArm_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,7 +1712,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683652}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hand_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1742,7 +1742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683634}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hand_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1772,7 +1772,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683640}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperArm_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1803,7 +1803,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683626}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Foot_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1833,7 +1833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683616}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperLeg_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1864,7 +1864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683618}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperLeg_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1895,7 +1895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683628}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerLeg_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,7 +1926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683630}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerLeg_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1957,7 +1957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6104565451909683624}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Foot_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1988,7 +1988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683584}
   - component: {fileID: 6104565451921410214}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Biker_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2071,7 +2071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683590}
   - component: {fileID: 6104565451921410212}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,28 +8,30 @@ public class GoToHome : ActionTask
     // Start is called before the first frame update
     protected override void OnExecute()
     {
-        blackboard.SetValue("SpawnPos", agent.gameObject.transform.position);
-
         agent.gameObject.GetComponent<PathFinding>().SetTarget(blackboard.GetValue<Vector3>("SpawnPos"));
-
+        
+        if (blackboard.GetValue<bool>("Bought") == true)
+        {
+            agent.gameObject.SetActive(true);
+        }
+        if (blackboard.GetValue<bool>("StoreIsClosed") == true)
+        {
+            agent.gameObject.SetActive(true);
+        }
+        if (blackboard.GetValue<bool>("OutOfTime") == true)
+        {
+            agent.gameObject.SetActive(true);
+        }
     }
     protected override void OnUpdate()
     {
         if (agent.gameObject.GetComponent<PathFinding>().IsOnTarget())
         {
-            if (blackboard.GetValue<bool>("Bought") == true)
-            {
-                agent.gameObject.SetActive(false);
-            }
-            if (blackboard.GetValue<bool>("StoreIsClosed") == true)
-            {
-                agent.gameObject.SetActive(false);
-            }
-            if (blackboard.GetValue<bool>("OutOfTime") == true)
-            {
-                agent.gameObject.SetActive(false);
-            }
-        }
+            agent.gameObject.SetActive(false);
 
+            References.data.manager_client.spawn_points.Add(blackboard.GetValue<Vector3>("SpawnPos"));
+
+            GameObject.Destroy(agent.gameObject);
+        }
     }
 }

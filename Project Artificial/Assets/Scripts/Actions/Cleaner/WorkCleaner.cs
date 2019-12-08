@@ -12,6 +12,7 @@ public class WorkCleaner : ActionTask
         controller = agent.gameObject.GetComponent<CleanerController>();
         controller.cleaner_state = CleanerController.CLEANER_STATE.CLEANER_WORKING;
         controller.mop.SetActive(true);
+        controller.scene_mop.SetActive(false);
         controller.follow_path.SetPath(agent.gameObject.GetComponent<CleanerController>().working_path, false);
     }
 

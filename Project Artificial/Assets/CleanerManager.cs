@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BansheeGz.BGSpline.Components;
-using BansheeGz.BGSpline.Curve;
 
 public class CleanerManager : MonoBehaviour
 {
     public DayCycle cycleday;
 
     public Transform spawn_cleaner_point;
-    public GameObject cleaner;
+    private GameObject cleaner;
     public GameObject door;
     public GameObject mop;
 
@@ -20,7 +19,7 @@ public class CleanerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cleaner = Resources.Load<GameObject>("Cleaner/Cleaner");
     }
 
     // Update is called once per frame
@@ -29,7 +28,6 @@ public class CleanerManager : MonoBehaviour
         if(cycleday.time_to_clean == true)
         {
             GameObject new_cleaner = Instantiate(cleaner);
-            new_cleaner.SetActive(true);
             new_cleaner.transform.position = spawn_cleaner_point.position;
             new_cleaner.GetComponent<CleanerController>().scene_mop = mop;
 
@@ -38,6 +36,8 @@ public class CleanerManager : MonoBehaviour
             new_cleaner.GetComponent<CleanerController>().working_path = working_path;
 
             cycleday.time_to_clean = false;
+
+            new_cleaner.SetActive(true);
         }
     }
 }
