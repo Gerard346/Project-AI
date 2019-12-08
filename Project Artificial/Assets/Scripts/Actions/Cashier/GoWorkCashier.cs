@@ -10,7 +10,9 @@ public class GoWorkCashier : ActionTask
     protected override void OnExecute()
     {
         controller = agent.gameObject.GetComponent<CashierController>();
+        agent.gameObject.transform.position = controller.spawn_pos.position;
         controller.cashier_state = CashierController.CASHIER_STATE.CASHIER_WALK_TO_WORK;
+        controller.follow_path.enabled = true;
         controller.follow_path.SetPath(controller.walk_to_work_path, false);
     }
 
@@ -21,6 +23,7 @@ public class GoWorkCashier : ActionTask
         {
             controller.cashier_state = CashierController.CASHIER_STATE.CASHIER_WORKING;
             controller.FixRotation();
+            blackboard.SetValue("IsWorking", true);
             EndAction(true);
         }
 

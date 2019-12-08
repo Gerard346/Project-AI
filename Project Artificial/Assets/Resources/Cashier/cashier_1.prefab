@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604064}
   - component: {fileID: 1225563295286291836}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tourist_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291603970}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hips_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604066}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604080}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spine_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604088}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604090}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hat_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604082}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperArm_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604084}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerArm_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604086}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hand_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604092}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperArm_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604094}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerArm_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291603968}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hand_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604070}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperLeg_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604072}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerLeg_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604078}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Foot_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604068}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperLeg_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604074}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerLeg_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604076}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Foot_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +629,9 @@ GameObject:
   - component: {fileID: 1225563295291498603}
   - component: {fileID: 1225563295291498597}
   - component: {fileID: 1576931793134010045}
-  m_Layer: 8
+  - component: {fileID: 2422157323436240938}
+  - component: {fileID: 4511945955025492126}
+  m_Layer: 2
   m_Name: cashier_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +645,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225563295291498592}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 5.013462, y: -2.1, z: 21.048723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -697,13 +699,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43df1304af12cc04a9efb08ca71823a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attention_time: 3
-  day_cycle: {fileID: 0}
+  level: 1
+  follow_path: {fileID: 2364092316245248154}
   walk_to_work_path: {fileID: 0}
   go_home_path: {fileID: 0}
   spawn_pos: {fileID: 0}
-  queue_controller: {fileID: 0}
+  client_on_attention: {fileID: 0}
   orientation_pos: {fileID: 0}
+  cashier_state: 0
 --- !u!114 &1225563295291498601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +864,41 @@ MonoBehaviour:
   max_rot_acceleration: 100
   max_rot_speed: 200
   mov_velocity: {x: 0, y: 0, z: 0}
+--- !u!114 &2422157323436240938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225563295291498592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundGraphSerialization: 
+  boundGraphObjectReferences: []
+  enableAction: 0
+  disableAction: 0
+  _graph: {fileID: 11400000, guid: ce1c2e6303970ee409e6eea0ff650007, type: 2}
+  _blackboard: {fileID: 4511945955025492126}
+--- !u!114 &4511945955025492126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225563295291498592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedBlackboard: '{"_variables":{"TimeToGoHome":{"_name":"TimeToGoHome","_id":"a9374818-ad59-4aed-8801-4d079e44d1bb","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"StoreIsOpened":{"_name":"StoreIsOpened","_id":"e345dd92-6a06-4c40-9e67-e95681a4f776","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"IsWorking":{"_name":"IsWorking","_id":"6769d8f6-fbad-4ef4-93e7-c9081208745a","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
+  _objectReferences: []
 --- !u!1 &1225563295291498594
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +910,7 @@ GameObject:
   - component: {fileID: 1225563295291604034}
   - component: {fileID: 1225563295286291808}
   - component: {fileID: 1225563294170861728}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -985,7 +1023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604036}
   - component: {fileID: 1225563295286291810}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Biker_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1068,7 +1106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604038}
   - component: {fileID: 1225563295286291812}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cap_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604040}
   - component: {fileID: 1225563295286291814}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cheerleader_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604042}
   - component: {fileID: 1225563295286291816}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Clown_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1322,7 +1360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604044}
   - component: {fileID: 1225563295286291818}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Emo_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1406,7 +1444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604046}
   - component: {fileID: 1225563295286291820}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Footballer_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,7 +1528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604048}
   - component: {fileID: 1225563295286291822}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Grandma_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1576,7 +1614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604050}
   - component: {fileID: 1225563295286291824}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hair_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1659,7 +1697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604052}
   - component: {fileID: 1225563295286291826}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hippie_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1742,7 +1780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604054}
   - component: {fileID: 1225563295286291828}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Luchador_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604056}
   - component: {fileID: 1225563295286291830}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mountie_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1907,7 +1945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225563295291604058}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Root_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1939,7 +1977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604060}
   - component: {fileID: 1225563295286291832}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Runner_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2022,7 +2060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225563295291604062}
   - component: {fileID: 1225563295286291834}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShopKeeper_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

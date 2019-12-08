@@ -538,6 +538,8 @@ GameObject:
   - component: {fileID: 1368126306774325569}
   - component: {fileID: 1368126306774325574}
   - component: {fileID: 1368126306774325595}
+  - component: {fileID: 8637245647534214149}
+  - component: {fileID: 5220727451971356879}
   m_Layer: 8
   m_Name: cashier_2
   m_TagString: Untagged
@@ -606,13 +608,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43df1304af12cc04a9efb08ca71823a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attention_time: 3
-  day_cycle: {fileID: 0}
+  level: 1
+  follow_path: {fileID: 1368126306774325574}
   walk_to_work_path: {fileID: 0}
   go_home_path: {fileID: 0}
   spawn_pos: {fileID: 0}
-  queue_controller: {fileID: 0}
+  client_on_attention: {fileID: 0}
   orientation_pos: {fileID: 0}
+  cashier_state: 0
 --- !u!114 &1368126306774325571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +773,41 @@ MonoBehaviour:
   max_rot_acceleration: 100
   max_rot_speed: 200
   mov_velocity: {x: 0, y: 0, z: 0}
+--- !u!114 &8637245647534214149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368126306774325593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundGraphSerialization: 
+  boundGraphObjectReferences: []
+  enableAction: 0
+  disableAction: 0
+  _graph: {fileID: 11400000, guid: ce1c2e6303970ee409e6eea0ff650007, type: 2}
+  _blackboard: {fileID: 5220727451971356879}
+--- !u!114 &5220727451971356879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368126306774325593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedBlackboard: '{"_variables":{"StoreIsOpened":{"_name":"StoreIsOpened","_id":"d997c782-ef16-40c3-8a14-8b33cd075213","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"TimeToGoHome":{"_name":"TimeToGoHome","_id":"17d6b118-0a53-4f4f-b40e-46b39a374849","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"IsWorking":{"_name":"IsWorking","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
+  _objectReferences: []
 --- !u!1 &1368126306849039647
 GameObject:
   m_ObjectHideFlags: 0

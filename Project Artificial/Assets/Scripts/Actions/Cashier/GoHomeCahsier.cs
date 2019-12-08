@@ -10,6 +10,7 @@ public class GoHomeCahsier : ActionTask
     {
         controller = agent.gameObject.GetComponent<CashierController>();
         controller.cashier_state = CashierController.CASHIER_STATE.CASHIER_GO_HOME;
+        controller.FreeRotation();
         controller.follow_path.SetPath(controller.go_home_path, false);
     }
 

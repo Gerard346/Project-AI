@@ -33,7 +33,6 @@ public class CashierController : MonoBehaviour
     public Transform spawn_pos;
     SteeringAlign align = null;
     StaticAlign static_align = null;
-    public QueueController queue_controller = null;
     public ClientController client_on_attention = null;
     public GameObject orientation_pos;
     
@@ -45,21 +44,21 @@ public class CashierController : MonoBehaviour
         align = GetComponent<SteeringAlign>();
         static_align = GetComponent<StaticAlign>();
         follow_path = GetComponent<SteeringFollowPath>();
-        transform.position = spawn_pos.position;
-        follow_path.enabled = true;
-        follow_path.SetPath(walk_to_work_path, false);
-        cashier_state = CASHIER_STATE.CASHIER_WALK_TO_WORK;
+        //transform.position = spawn_pos.position;
+        //follow_path.enabled = true;
+       // follow_path.SetPath(walk_to_work_path, false);
+       // cashier_state = CASHIER_STATE.CASHIER_WALK_TO_WORK;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (cashier_state == CASHIER_STATE.CASHIER_WALK_TO_WORK && follow_path.path_completed)
+        /*if (cashier_state == CASHIER_STATE.CASHIER_WALK_TO_WORK && follow_path.path_completed)
         {
             cashier_state = CASHIER_STATE.CASHIER_WORKING;
             FixRotationWithAngle(orientation_pos.transform.localRotation.eulerAngles.y);
         }
-        /*if(cashier_state == CASHIER_STATE.CASHIER_ATTENDING)
+        if(cashier_state == CASHIER_STATE.CASHIER_ATTENDING)
         {
             timer += Time.deltaTime;
             if (timer > attention_time)
@@ -68,7 +67,7 @@ public class CashierController : MonoBehaviour
                 cashier_state = CASHIER_STATE.CASHIER_WORKING;
                 queue_controller.ClientDone(client_on_attention);
             }
-        }*/
+        }
         if(References.data.day_cycle.actual_time> 79200 && cashier_state != CASHIER_STATE.CASHIER_GO_HOME)
         {
             FreeRotation();
@@ -78,7 +77,7 @@ public class CashierController : MonoBehaviour
         if (cashier_state == CASHIER_STATE.CASHIER_GO_HOME && follow_path.path_completed)
         {
             Destroy(gameObject, 0.5f);
-        }
+        }*/
     }
 
     public void AttendClient(ClientController target_client)
@@ -94,7 +93,10 @@ public class CashierController : MonoBehaviour
     public void FixRotation()
     {
         FixRotationWithAngle(orientation_pos.transform.localRotation.eulerAngles.y);
-        client_on_attention.FixRotation(client_on_attention.assigned_queue_point.localRotation.eulerAngles.y);
+        if (client_on_attention != null)
+        {
+            client_on_attention.FixRotation(client_on_attention.assigned_queue_point.localRotation.eulerAngles.y);
+        }
     }
 
     private void FixRotationWithAngle(float angle)
