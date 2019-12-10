@@ -17,7 +17,7 @@ public class ClosingDoor : MonoBehaviour
     void Update()
     {
         ret = Mathf.Round(transform.eulerAngles.y);
-        Debug.Log(ret.ToString());
+      
         if(Mathf.Round(transform.eulerAngles.y) != angle)
         {
             transform.Rotate(direction * speed);

@@ -12,17 +12,29 @@ public class CreateNewParkingPlaces : MonoBehaviour
     private GameObject temp_car;
     private Renderer temp_car_render;
     Vector3 new_pos;
-    void Start()
+    bool spawned;
+    void OnEnable()
     {
         temp_car = Instantiate(car, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
         temp_car.layer = 9;
         car_layer = ~(terrain);
         temp_car.GetComponent<Collider>().enabled = false;
         temp_car_render = temp_car.GetComponent<Renderer>();
+        spawned = false;
     }
-
+    private void OnDisable()
+    {
+        if (temp_car != null)
+        {
+            Destroy(temp_car);
+        }
+    }
     void Update()
     {
+        if (spawned)
+        {
+            this.GetComponent<CreateNewParkingPlaces>().enabled = false;
+        }
 
         myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         new_pos = new Vector3(hit.point.x, hit.point.y + (temp_car.GetComponent<Collider>().bounds.size.y / 2), hit.point.z);
@@ -38,9 +50,11 @@ public class CreateNewParkingPlaces : MonoBehaviour
         {
             temp_car_render.material.SetColor("_Color", Color.green);
 
-            Debug.Log("Not Colliding. You can build there");
+           // Debug.Log("Not Colliding. You can build there");
             if (Input.GetMouseButtonDown(0))
             {
+                spawned = true;
+
                 GameObject temp = Instantiate(car, hit.point, Quaternion.identity);
                 temp.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 Vector3 temp_v = new Vector3(0, (temp.GetComponent<Collider>().bounds.size.y / 2), 0);
@@ -49,6 +63,8 @@ public class CreateNewParkingPlaces : MonoBehaviour
                 temp.GetComponents<BoxCollider>()[1].enabled = true;
 
                 References.data.manager_client.spawn_points.Add(temp.transform.Find("SpawnPoint").position);
+
+
             }
         }
 
