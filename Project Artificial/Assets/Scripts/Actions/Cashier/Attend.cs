@@ -22,7 +22,7 @@ public class Attend : ActionTask
 
         attend_time = controller.attend_time / controller.level;
 
-        watch_image = agent.transform.Find("name").GetComponent<Image>();
+        //watch_image = agent.transform.Find("name").GetComponent<Image>();
 
         controller.FixRotation();
 

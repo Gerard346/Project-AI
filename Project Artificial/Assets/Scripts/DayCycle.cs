@@ -33,6 +33,13 @@ public class DayCycle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        store_is_open = true;
+
+        Blackboard[] entities_blackboard = scene_entities.GetComponentsInChildren<Blackboard>(true);
+        foreach (Blackboard entity_blackboard in entities_blackboard)
+        {
+            entity_blackboard.SetValue("StoreIsOpened", true);
+        }
         spawn_employees = true;
     }
 
@@ -63,7 +70,7 @@ public class DayCycle : MonoBehaviour
             Blackboard[] entities_blackboard = scene_entities.GetComponentsInChildren<Blackboard>(true);
             foreach(Blackboard entity_blackboard in entities_blackboard)
             {
-                entity_blackboard.SetValue("store_is_opened", true);
+                entity_blackboard.SetValue("StoreIsOpened", true);
             }
 
         }

@@ -62,7 +62,7 @@ public class CreateNewParkingPlaces : MonoBehaviour
                 temp.GetComponents<BoxCollider>()[0].enabled = true;
                 temp.GetComponents<BoxCollider>()[1].enabled = true;
 
-                References.data.manager_client.spawn_points.Add(temp.transform.Find("SpawnPoint").position);
+                //References.data.manager_client.spawn_points.Add(temp.transform.Find("SpawnPoint").position);
 
 
             }

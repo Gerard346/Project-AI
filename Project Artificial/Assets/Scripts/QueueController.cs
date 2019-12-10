@@ -6,7 +6,7 @@ public class QueueController : MonoBehaviour
 {
     public GameObject points_queue;
     private List<KeyValuePair<ClientController,int>> clients = null;
-    public List<CashierController> cashiers = new List<CashierController>();
+    private List<CashierController> cashiers = new List<CashierController>();
     private List<List<KeyValuePair<bool, Transform>>> queue_points;
 
     // Start is called before the first frame update
@@ -15,19 +15,7 @@ public class QueueController : MonoBehaviour
         clients = new List<KeyValuePair<ClientController, int>>();
         queue_points = new List<List<KeyValuePair<bool, Transform>>>();
 
-        for (int i = 0; i < points_queue.transform.childCount; i++)
-        {
-            List<KeyValuePair<bool, Transform>> row_points = new List<KeyValuePair<bool, Transform>>();
-
-            Transform target_row = points_queue.transform.GetChild(i);
-
-            for (int n = 0; n < target_row.childCount; n++)
-            {
-                row_points.Add(new KeyValuePair<bool, Transform>(true, target_row.GetChild(n)));
-            }
-
-            queue_points.Add(row_points);
-        }
+        AddQueuePoints(points_queue.transform);
     }
 
     void Update()
@@ -182,5 +170,25 @@ public class QueueController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void AddQueuePoints(Transform points)
+    {
+        List<KeyValuePair<bool, Transform>> points_list = new List<KeyValuePair<bool, Transform>>();
+        
+        Transform[] new_queue_points = points.GetComponentsInChildren<Transform>();
+        
+        foreach(Transform queue_point in new_queue_points)
+        {
+            if (queue_point == points.transform) continue;
+
+            points_list.Add(new KeyValuePair<bool, Transform>(true, queue_point));
+        }
+        
+        queue_points.Add(points_list);
+    }
+    public void AddCashier(CashierController cashier)
+    {
+        cashiers.Add(cashier);
     }
 }

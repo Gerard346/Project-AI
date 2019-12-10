@@ -23,7 +23,7 @@ public class ClosingDoor : MonoBehaviour
             transform.Rotate(direction * speed);
         }
     }
-    void OnTriggersEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Cleaner")
         {
@@ -31,7 +31,7 @@ public class ClosingDoor : MonoBehaviour
             direction = Vector3.down;
         }
     }
-    void OnTriggersExit(Collider other) {
+    void OnTriggerExit(Collider other) {
         if (other.gameObject.tag == "Cleaner")
         {
             angle = start_rotation.y;

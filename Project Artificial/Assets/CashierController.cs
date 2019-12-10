@@ -93,7 +93,7 @@ public class CashierController : MonoBehaviour
     public void FixRotation()
     {
         FixRotationWithAngle(orientation_pos.transform.localRotation.eulerAngles.y);
-        if (client_on_attention != null)
+        if (client_on_attention != null && client_on_attention.assigned_queue_point != null)
         {
             client_on_attention.FixRotation(client_on_attention.assigned_queue_point.localRotation.eulerAngles.y);
         }

@@ -12,21 +12,31 @@ public class ActivateATM : MonoBehaviour
 
     public void ActivateMoreATM()
     {
-        if (!atm_2.activeSelf)
+        if (!atm_2.activeInHierarchy)
         {
             atm_2.SetActive(true);
+            
+            References.data.queue_controller.AddQueuePoints(atm_2.transform.Find("ATM_QUEUE_POINTS_2"));
+
             return;
         }
-        if (atm_2.activeSelf && !atm_3.activeSelf)
+        if (atm_2.activeInHierarchy && !atm_3.activeInHierarchy)
         {
             atm_3.SetActive(true);
+
+            References.data.queue_controller.AddQueuePoints(atm_2.transform.Find("ATM_QUEUE_POINTS_3"));
+
             return;
         }
-        if (atm_3.activeSelf)
+        if (atm_3.activeInHierarchy)
         {
             atm_4.SetActive(true);
+
+            References.data.queue_controller.AddQueuePoints(atm_2.transform.Find("ATM_QUEUE_POINTS_4"));
+
             return;
         }
+
         return;
     }
 }

@@ -10,7 +10,7 @@ public class GoToQueue : ActionTask
     protected override void OnExecute()
     {
         agent.gameObject.GetComponent<ClientController>().client_state = ClientController.CLIENT_STATE.CLIENT_GO_BUY;
-        blackboard.GetValue<QueueController>("myQueueController").ClientIn(agent.gameObject.GetComponent<ClientController>());
+        References.data.queue_controller.ClientIn(agent.gameObject.GetComponent<ClientController>());
     }
     protected override void OnUpdate()
     {

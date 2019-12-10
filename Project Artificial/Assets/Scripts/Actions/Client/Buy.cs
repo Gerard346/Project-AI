@@ -4,7 +4,7 @@ public class Buy : ActionTask
 {
     protected override void OnExecute()
     {
-        blackboard.GetValue<QueueController>("myQueueController").AttendClient(agent.gameObject.GetComponent<ClientController>());
+        References.data.queue_controller.AttendClient(agent.gameObject.GetComponent<ClientController>());
     }
     protected override void OnUpdate()
     {

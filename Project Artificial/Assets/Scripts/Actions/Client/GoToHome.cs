@@ -14,10 +14,7 @@ public class GoToHome : ActionTask
         {
             agent.gameObject.SetActive(true);
         }
-        if (blackboard.GetValue<bool>("StoreIsClosed") == true)
-        {
-            agent.gameObject.SetActive(true);
-        }
+        
         if (blackboard.GetValue<bool>("OutOfTime") == true)
         {
             agent.gameObject.SetActive(true);
@@ -29,7 +26,7 @@ public class GoToHome : ActionTask
         {
             agent.gameObject.SetActive(false);
 
-            References.data.manager_client.spawn_points.Add(blackboard.GetValue<Vector3>("SpawnPos"));
+            //References.data.manager_client.spawn_points.Add(blackboard.GetValue<Vector3>("SpawnPos"));
 
             GameObject.Destroy(agent.gameObject);
         }

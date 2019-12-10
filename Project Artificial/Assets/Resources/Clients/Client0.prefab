@@ -936,9 +936,9 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"NeedHelp":{"_name":"NeedHelp","_id":"ea852a20-342d-447f-a3f7-76162b2a5de0","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"SpawnPos":{"_name":"SpawnPos","_id":"0e0b1837-acdd-4230-be87-b8c7887909c7","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Bought":{"_name":"Bought","_id":"8a2df61b-81fe-40a4-b847-6a777615f27c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"StoreIsClosed":{"_name":"StoreIsClosed","_id":"4118560f-45ce-4b12-9406-b81ffbbb86d8","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"myQueueController":{"_name":"myQueueController","$type":"NodeCanvas.Framework.Variable`1[[QueueController,
-    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"myQueueController":{"_name":"myQueueController","_id":"ef62f311-1df3-4e09-94fe-ef94e4122839","$type":"NodeCanvas.Framework.Variable`1[[QueueController,
+    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"StoreIsOpened":{"_name":"StoreIsOpened","_id":"df2a6242-79df-4b86-8497-1717f0e84b38","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
 --- !u!1 &3752597710907131257
 GameObject:

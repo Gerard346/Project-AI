@@ -7,7 +7,7 @@ public class ClientManager : MonoBehaviour
 
     public Transform scene_spawns_container = null;
 
-    public List<Vector3> spawn_points;
+    private List<Vector3> spawn_points = new List<Vector3>();
     public Transform pick_point;
     public Transform buy_point;
     public Transform kill_point;
@@ -46,14 +46,11 @@ public class ClientManager : MonoBehaviour
 
             GameObject new_client = Instantiate(client_prefab);
 
-            new_client.GetComponent<Blackboard>().SetValue("myQueueController", queue_controller);
-
             new_client.transform.parent = client_container.transform;
 
             new_client.GetComponent<Blackboard>().SetValue("SpawnPos", spawn_point);
             new_client.transform.position = spawn_point;
-
-            new_client.GetComponent<ClientController>().buy_point = buy_point.position;
+            new_client.GetComponent<Blackboard>().SetValue("StoreIsOpened", true);
             new_client.GetComponent<ClientController>().pick_point = target_pick_point;
             new_client.GetComponent<ClientController>().kill_point = target_kill_point;
 
