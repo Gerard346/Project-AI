@@ -188,7 +188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6104565451909683588
 Transform:
   m_ObjectHideFlags: 0
@@ -2071,9 +2071,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6104565451909683590}
   - component: {fileID: 6104565451921410212}
+  - component: {fileID: 1463779157771462301}
   m_Layer: 2
   m_Name: Base_mesh
-  m_TagString: Untagged
+  m_TagString: Cleaner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2161,3 +2162,16 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0000023841858, y: 1.3761622, z: 0.0016335845}
     m_Extent: {x: 0.69165075, y: 1.3761622, z: 0.35555044}
   m_DirtyAABB: 0
+--- !u!65 &1463779157771462301
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7604045079812706527}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3833015, y: 2.7523243, z: 0.7111009}
+  m_Center: {x: 0.0000023841858, y: 1.3761622, z: 0.0016335845}
