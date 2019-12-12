@@ -1,4 +1,4 @@
-﻿﻿# Grocery Store AI
+# Grocery Store AI
 
 Grocery Store AI is an Artificial Intelligence based game made with Unity developed for a university project in CITM UPC (Terrasa, Spain) in our degree in Videogame Developement and Design.
 
@@ -22,7 +22,6 @@ At 12::00 at night he comes to clean the shop, after he cleaned all the shop he 
 
 * WASD: Camera Movement
 * R: Return camera to initial position
-* 2 & Right Click: Will create a parking with cars on the outside of the store increasing the client limit.
 
 ## Authors
 
@@ -49,7 +48,11 @@ You will find information about the game and the Behaviour Trees in the wiki: ht
 
 * **Cashier**: The cashier will go to work when the store is open, start working when its his turn, attend the clients when client is buying and go home when his turn ended.
 
+![Cashier BT](https://github.com/manavld/AIProjectPics/blob/master/Cashier%20BT.jpg)
+
 * **Cleaner**: The cleaner will walk to work when its his turn to work, grab the mob and start working until his time is done, leaves the mob back and goes back home.
+
+![Cleaner BT](https://github.com/manavld/AIProjectPics/blob/master/Cleaner%20BT.jpg)
 
 ## License
 
