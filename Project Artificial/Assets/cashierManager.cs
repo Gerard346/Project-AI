@@ -30,12 +30,14 @@ public class cashierManager : MonoBehaviour
             if (ATM_1.activeSelf)
             {
                 GameObject new_employer1 = Instantiate(Cashier1);
+                new_employer1.transform.parent = ATM_1.transform;
                 References.data.queue_controller.AddCashier(new_employer1.GetComponent<CashierController>());
                 new_employer1.SetActive(true);
             }
             if (ATM_2.activeSelf)
             {
                 GameObject new_employer2 = Instantiate(Cashier2);
+                new_employer2.transform.parent = ATM_2.transform;
                 References.data.queue_controller.AddCashier(new_employer2.GetComponent<CashierController>());
 
                 new_employer2.SetActive(true);
@@ -43,6 +45,7 @@ public class cashierManager : MonoBehaviour
             if (ATM_3.activeSelf)
             {
                 GameObject new_employer3 = Instantiate(Cashier3);
+                new_employer3.transform.parent = ATM_3.transform;
                 References.data.queue_controller.AddCashier(new_employer3.GetComponent<CashierController>());
 
                 new_employer3.SetActive(true);

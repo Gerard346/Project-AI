@@ -35,7 +35,10 @@ public class CashierController : MonoBehaviour
     StaticAlign static_align = null;
     public ClientController client_on_attention = null;
     public GameObject orientation_pos;
-    
+
+    public GameObject lvl_2;
+    public GameObject lvl_3;
+
     public CASHIER_STATE cashier_state;
 
     // Start is called before the first frame update
@@ -110,5 +113,26 @@ public class CashierController : MonoBehaviour
     {
         align.enabled = true;
         static_align.enabled = false;
+    }
+
+    public void levelUp()
+    {
+        if(level > 2)
+        {
+            return;
+        }
+        if(level == 1)
+        {
+            level += 1;
+            lvl_2.SetActive(true);
+            return;
+        }
+
+        if (level == 2)
+        {
+            level += 1;
+            lvl_2.SetActive(true);
+            return;
+        }
     }
 }
