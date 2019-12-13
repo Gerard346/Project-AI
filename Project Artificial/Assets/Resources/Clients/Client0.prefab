@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 6681470985530569064}
   m_Layer: 8
   m_Name: Client0
-  m_TagString: Player
+  m_TagString: Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -938,6 +938,7 @@ MonoBehaviour:
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Bought":{"_name":"Bought","_id":"8a2df61b-81fe-40a4-b847-6a777615f27c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"myQueueController":{"_name":"myQueueController","_id":"ef62f311-1df3-4e09-94fe-ef94e4122839","$type":"NodeCanvas.Framework.Variable`1[[QueueController,
     Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"StoreIsOpened":{"_name":"StoreIsOpened","_id":"df2a6242-79df-4b86-8497-1717f0e84b38","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"GettingHelp":{"_name":"GettingHelp","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
 --- !u!1 &3752597710907131257

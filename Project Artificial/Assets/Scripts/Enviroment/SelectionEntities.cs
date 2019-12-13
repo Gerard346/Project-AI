@@ -6,7 +6,9 @@ public class SelectionEntities : MonoBehaviour
 {
     GameObject selection;
     public LayerMask layer;
-    GameObject selected;
+    GameObject dependent_selected;
+    GameObject client_selected;
+
     void Start()
     {
         
@@ -21,20 +23,64 @@ public class SelectionEntities : MonoBehaviour
             selection = hit.collider.gameObject;
             selection = selection.transform.parent.gameObject;
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && selection != null)
             {
-                selected.transform.Find("circle_selected").gameObject.SetActive(false);
-
-                selected = selection;
-                if (selection != null)
+                if(selection.gameObject.tag == "dependent")
                 {
-                    Debug.Log(selection.name);
-                    if(selection.gameObject.tag == "dependent")
+                    if (dependent_selected != null)
                     {
-                        selected.transform.Find("circle_selected").gameObject.SetActive(true);
+                        dependent_selected.transform.Find("circle_selected").gameObject.SetActive(false);
+
+                        if (selection == dependent_selected)
+                        { 
+                            dependent_selected = null;
+                        }
+                        else
+                        {
+                            dependent_selected = selection;
+                            dependent_selected.transform.Find("circle_selected").gameObject.SetActive(true);
+                        }
+                    }
+                    else
+                    {
+                        dependent_selected = selection;
+                        dependent_selected.transform.Find("circle_selected").gameObject.SetActive(true);
+
+                        if (client_selected != null)
+                        {
+                            dependent_selected.GetComponentInChildren<DependentController>().HelpClient(client_selected.GetComponentInChildren<ClientController>());
+                            enabled = false;
+                        }
                     }
                 }
+                if(selection.gameObject.tag == "Client")
+                {
+                    if (client_selected != null)
+                    {
+                        client_selected.transform.Find("circle_selected").gameObject.SetActive(false);
 
+                        if (selection == client_selected)
+                        {
+                            client_selected = null;
+                        }
+                        else
+                        {
+                            client_selected = selection;
+                            client_selected.transform.Find("circle_selected").gameObject.SetActive(true);
+                        }
+                    }
+                    else
+                    {
+                        client_selected = selection;
+                        client_selected.transform.Find("circle_selected").gameObject.SetActive(true);
+
+                        if (dependent_selected != null)
+                        {
+                            dependent_selected.GetComponentInChildren<DependentController>().HelpClient(client_selected.GetComponentInChildren<ClientController>());
+                            enabled = false;
+                        }
+                    }
+                }
             }
         }
     }

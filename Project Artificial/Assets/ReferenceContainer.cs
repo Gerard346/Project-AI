@@ -7,6 +7,7 @@ public class ReferenceContainer : MonoBehaviour{
     public QueueController queue_controller;
     public ClientManager manager_client;
     public CleanerController controller_cleaner;
+    public MoneyManager manager_money;
     void Start()
     {
         References.data = this;

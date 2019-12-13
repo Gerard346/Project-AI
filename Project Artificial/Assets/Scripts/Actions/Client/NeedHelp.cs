@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using NodeCanvas.Framework;
 public class NeedHelp : ActionTask
 {
@@ -9,24 +7,30 @@ public class NeedHelp : ActionTask
     // Start is called before the first frame update
     protected override void OnExecute()
     {
+
     }
+
     protected override void OnUpdate()
     {
-        if(timer > max_timer)
+        if (blackboard.GetValue<bool>("GettingHelp"))
         {
-            blackboard.SetValue("OutOfTime", true);
-            EndAction(true);
-        }
-        timer += Time.deltaTime;
+            if (agent.gameObject.GetComponent<ClientController>().client_state == ClientController.CLIENT_STATE.CLIENT_GO_BUY)
+            {
+                blackboard.SetValue("GettingHelp", false);
+                blackboard.SetValue("Picked", true);
+                EndAction(true);
+            }
 
-        if(agent.gameObject.GetComponent<ClientController>().client_state == ClientController.CLIENT_STATE.CLIENT_GO_BUY){
-            blackboard.SetValue("Picked", true);
-            EndAction(true);
         }
-
-        if(blackboard.GetValue<bool>("NeedHelp"))
+        else
         {
-            EndAction(true);
+            if (timer > max_timer)
+            {
+                blackboard.SetValue("OutOfTime", true);
+                EndAction(true);
+            }
+
+            timer += Time.deltaTime;
         }
     }
 }

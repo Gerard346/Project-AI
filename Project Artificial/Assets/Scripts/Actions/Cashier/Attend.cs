@@ -1,8 +1,6 @@
 ﻿using NodeCanvas.Framework;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Attend : ActionTask
 {
     float timer = 0.0f;
@@ -10,6 +8,7 @@ public class Attend : ActionTask
     Image watch_image = null;
 
     private CashierController controller = null;
+    
     // Start is called before the first frame update
     protected override void OnExecute()
     {
@@ -22,7 +21,7 @@ public class Attend : ActionTask
 
         attend_time = controller.attend_time / controller.level;
 
-        //watch_image = agent.transform.Find("name").GetComponent<Image>();
+        watch_image = agent.transform.Find("Canvas").Find("watch_image").GetComponent<Image>();
 
         controller.FixRotation();
 
@@ -30,7 +29,8 @@ public class Attend : ActionTask
     protected override void OnUpdate()
     {
         float watch_value = timer / attend_time;
-        //watch_image.
+
+        watch_image.fillAmount = watch_value;
 
         timer += Time.deltaTime;
 
@@ -40,6 +40,7 @@ public class Attend : ActionTask
             References.data.queue_controller.ClientDone(controller.client_on_attention);
             timer = 0.0f;
             
+            References.data.manager_money.AddMoney(Random.Range(50, 100));
             controller.FreeRotation();
             
             EndAction(true);

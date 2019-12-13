@@ -91,6 +91,26 @@ public class PathFinding : MonoBehaviour
         return is_on_target;
     }
 
+    public float DistanceToTarget()
+    {
+        if(move.target != null)
+        {
+            return Vector3.Distance(move.target, transform.position);
+        }
+        else
+        {
+            return 0.0f;
+        }
+    }
+
+    public void ClearPath()
+    {
+        enabled = false;
+        path_nav = null;
+        is_on_target = true;
+        move.target = transform.position;
+    }
+
     private void OnDrawGizmos()
     {
         if (path_nav != null)

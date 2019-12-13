@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BansheeGz.BGSpline.Components;
 using BansheeGz.BGSpline.Curve;
+using UnityEngine.UI;
 
 public class CashierController : MonoBehaviour
 {
@@ -115,10 +116,11 @@ public class CashierController : MonoBehaviour
         static_align.enabled = false;
     }
 
-    public void levelUp()
+    public void levelUp(Button target_button)
     {
         if(level > 2)
         {
+            target_button.interactable = false;
             return;
         }
         if(level == 1)
@@ -131,7 +133,7 @@ public class CashierController : MonoBehaviour
         if (level == 2)
         {
             level += 1;
-            lvl_2.SetActive(true);
+            lvl_3.SetActive(true);
             return;
         }
     }
