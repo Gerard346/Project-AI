@@ -35,6 +35,8 @@ public class DayCycle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
+
         store_is_open = true;
 
         Blackboard[] entities_blackboard = scene_entities.GetComponentsInChildren<Blackboard>(true);
