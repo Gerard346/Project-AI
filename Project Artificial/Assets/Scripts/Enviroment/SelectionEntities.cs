@@ -21,7 +21,6 @@ public class SelectionEntities : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100.0f, layer))
         {
             selection = hit.collider.gameObject;
-            selection = selection.transform.parent.gameObject;
 
             if (Input.GetMouseButtonDown(0) && selection != null)
             {

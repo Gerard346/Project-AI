@@ -9,9 +9,16 @@ public class ActivateATM : MonoBehaviour
     public GameObject atm_2;
     public GameObject atm_3;
     public GameObject atm_4;
-
+    private int count = 1;
     public void ActivateMoreATM()
     {
+        if(count > 5)
+        {
+            return;
+        }
+        count++;
+        return;
+        /*
         if (!atm_2.activeInHierarchy)
         {
             atm_2.SetActive(true);
@@ -37,6 +44,6 @@ public class ActivateATM : MonoBehaviour
             return;
         }
 
-        return;
+        return;*/
     }
 }

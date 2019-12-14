@@ -12,9 +12,9 @@ public class ChoosePickNeedHelp : ActionTask
     }
     protected override void OnExecute()
     {
-        int i = Random.Range(0, 100);
+        int i = Random.Range(0, 50);
 
-        if (i > 80)
+        if (i > 50)
         {
             //blackboard.SetValue("NeedHelp", true);
             //blackboard.SetValue("Picked", false);
@@ -23,8 +23,8 @@ public class ChoosePickNeedHelp : ActionTask
         }
         else
         {
-            blackboard.SetValue("NeedHelp", false);
-            blackboard.SetValue("Picked", true);
+            blackboard.SetValue("NeedHelp", true);
+            blackboard.SetValue("Picked", false);
         }
 
         EndAction(true);

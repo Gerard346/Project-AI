@@ -11,14 +11,20 @@ public class HelpDependent : ActionTask
     protected override void OnExecute()
     {
         //Watch
+
         dependent_controller = agent.GetComponent<DependentController>();
         dependent_controller.GetClient().GetComponent<Blackboard>().SetValue("GettingHelp", true);
+        dependent_controller.FixRotation();
     }
     protected override void OnUpdate()
     {
-        if(timer > attend_time)
+        timer += Time.deltaTime;
+
+        if (timer > attend_time)
         {
+            dependent_controller.FreeRotation();
             dependent_controller.GetClient().client_state = ClientController.CLIENT_STATE.CLIENT_GO_BUY;
+            EndAction(true);
         }
     }
 }

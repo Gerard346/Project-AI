@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 5178089867332878083}
   - component: {fileID: 5178089867342123235}
   - component: {fileID: 2589388259169480039}
+  - component: {fileID: 3985196137365223633}
   - component: {fileID: 5178089867332772650}
   - component: {fileID: 5842425976606501981}
   - component: {fileID: 1036496408401187843}
@@ -133,8 +134,9 @@ GameObject:
   - component: {fileID: 5178089867332772648}
   - component: {fileID: 5178089867332772646}
   - component: {fileID: 4844805582658846206}
-  - component: {fileID: 4643457171085585118}
+  - component: {fileID: 6539389601145053032}
   - component: {fileID: 4643457171085585119}
+  - component: {fileID: 4643457171085585118}
   m_Layer: 8
   m_Name: dependent
   m_TagString: dependent
@@ -204,6 +206,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5343b6e45f730f74e8be4cf4ab901678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn_pos: {fileID: 0}
+  observer_pos: {fileID: 0}
+--- !u!114 &3985196137365223633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5178089867332772643}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce578ebd37725e7449d9ea453685aa88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path_next_pos: 0
 --- !u!114 &5178089867332772650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,24 +378,28 @@ MonoBehaviour:
   max_rot_acceleration: 100
   max_rot_speed: 200
   mov_velocity: {x: 0, y: 0, z: 0}
---- !u!114 &4643457171085585118
-MonoBehaviour:
+--- !u!195 &6539389601145053032
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5178089867332772643}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _serializedBlackboard: '{"_variables":{"Selected":{"_name":"Selected","_id":"e4195eb1-7561-4b9f-8306-5e94a5a8a79b","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"TimeToGoHome":{"_name":"TimeToGoHome","_id":"6937d482-2a38-428c-8a4d-235706823900","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"StoreIsOpened":{"_name":"StoreIsOpened","_id":"930f9b39-6928-49d2-bcbf-370cde2ce234","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"IsWorking":{"_name":"IsWorking","_id":"c8ff26d5-0bb0-4c84-be52-81a87ad7f955","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
-  _objectReferences: []
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &4643457171085585119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +418,25 @@ MonoBehaviour:
   disableAction: 0
   _graph: {fileID: 11400000, guid: d07c1f46bcd5a2d4591bd37b6be182f9, type: 2}
   _blackboard: {fileID: 4643457171085585118}
+--- !u!114 &4643457171085585118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5178089867332772643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedBlackboard: '{"_variables":{"Selected":{"_name":"Selected","_id":"e4195eb1-7561-4b9f-8306-5e94a5a8a79b","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"TimeToGoHome":{"_name":"TimeToGoHome","_id":"6937d482-2a38-428c-8a4d-235706823900","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"StoreIsOpened":{"_name":"StoreIsOpened","_id":"930f9b39-6928-49d2-bcbf-370cde2ce234","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"IsWorking":{"_name":"IsWorking","_id":"c8ff26d5-0bb0-4c84-be52-81a87ad7f955","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"SpawnPos":{"_name":"SpawnPos","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+  _objectReferences: []
 --- !u!1 &5178089867332772645
 GameObject:
   m_ObjectHideFlags: 0

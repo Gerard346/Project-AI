@@ -95,7 +95,14 @@ public class PathFinding : MonoBehaviour
     {
         if(move.target != null)
         {
-            return Vector3.Distance(move.target, transform.position);
+            if (path_nav.Length > 0)
+            {
+                return Vector3.Distance(path_nav[path_nav.Length - 1], transform.position);
+            }
+            else
+            {
+                return Vector3.Distance(move.target, transform.position);
+            }
         }
         else
         {

@@ -27,6 +27,8 @@ public class DayCycle : MonoBehaviour
     float total_time_day = 24 * 60 * 60;
     bool day_has_passed = false;
 
+    int workers_ready = 0;
+
     [Header("Entities")]
     public GameObject scene_entities = null;
 
@@ -51,6 +53,7 @@ public class DayCycle : MonoBehaviour
 
         if (actual_time > total_time_day)
         {
+            workers_ready = 0;
 
             actual_time = 0;
             days += 1;
@@ -108,5 +111,15 @@ public class DayCycle : MonoBehaviour
             Trigger.needs_adding = false;
         }
         coin_ui.text = "Total Coins: " + coins;
+    }
+
+    public void NotifyReadyWorker()
+    {
+        workers_ready += 1;
+        
+        if(workers_ready >= References.data.queue_controller.CashiersCount() + References.data.dependents_manager.DependentsCount())
+        {
+
+        }
     }
 }

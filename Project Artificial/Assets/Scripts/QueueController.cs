@@ -191,4 +191,9 @@ public class QueueController : MonoBehaviour
     {
         cashiers.Add(cashier);
     }
+
+    public int CashiersCount()
+    {
+        return cashiers.Count;
+    }
 }

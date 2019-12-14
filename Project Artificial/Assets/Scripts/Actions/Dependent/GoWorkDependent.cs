@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GoWorkDependent : MonoBehaviour
+using NodeCanvas.Framework;
+public class GoWorkDependent : ActionTask
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void OnExecute()
     {
-        
-    }
+       agent.gameObject.GetComponent<PathFinding>().SetTarget(blackboard.GetValue<Transform>("ObserverPoint").position);
 
-    // Update is called once per frame
-    void Update()
+    }
+    protected override void OnUpdate()
     {
-        
+        if (agent.gameObject.GetComponent<PathFinding>().IsOnTarget())
+        {
+            agent.GetComponent<DependentController>().FixRotation();
+            agent.GetComponent<Blackboard>().SetValue("IsWorking", true);
+            EndAction(true);
+        }
+
     }
 }
