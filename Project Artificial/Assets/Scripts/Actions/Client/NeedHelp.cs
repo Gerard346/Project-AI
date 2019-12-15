@@ -1,13 +1,20 @@
 ﻿using UnityEngine;
 using NodeCanvas.Framework;
+using UnityEngine.UI;
 public class NeedHelp : ActionTask
 {
     float timer = 0.0f;
     float max_timer = 30.0f;
+    Image idk_icon = null;
+    Image happy_icon = null;
+
     // Start is called before the first frame update
     protected override void OnExecute()
     {
-
+        happy_icon = agent.transform.Find("Canvas").Find("happy_img").GetComponent<Image>();
+        happy_icon.enabled = false;
+        idk_icon = agent.transform.Find("Canvas").Find("idk_img").GetComponent<Image>();
+        idk_icon.enabled = true;
     }
 
     protected override void OnUpdate()

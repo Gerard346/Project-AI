@@ -119,9 +119,9 @@ public class DayCycle : MonoBehaviour
     {
         workers_ready += 1;
         
-        if(workers_ready >= References.data.queue_controller.CashiersCount() + References.data.dependents_manager.DependentsCount())
+        /*if(workers_ready >= References.data.queue_controller.CashiersCount() + References.data.dependents_manager.DependentsCount())
         {
 
-        }
+        }*/
     }
 }

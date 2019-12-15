@@ -18,7 +18,6 @@ public class HelpDependent : ActionTask
         dependent_controller = agent.GetComponent<DependentController>();
         dependent_controller.GetClient().GetComponent<Blackboard>().SetValue("GettingHelp", true);
         dependent_controller.FixRotation();
-        watch_image = agent.transform.Find("Canvas").Find("watch_image").GetComponent<Image>();
 
     }
     protected override void OnUpdate()

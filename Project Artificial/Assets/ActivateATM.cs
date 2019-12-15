@@ -8,11 +8,10 @@ public class ActivateATM : MonoBehaviour
     public GameObject atm_1;
     public GameObject atm_2;
     public GameObject atm_3;
-    public GameObject atm_4;
     private int count = 1;
     public void ActivateMoreATM()
     {
-        if(count > 5)
+        if(count > 4)
         {
             return;
         }
@@ -32,14 +31,6 @@ public class ActivateATM : MonoBehaviour
             atm_3.SetActive(true);
 
             References.data.queue_controller.AddQueuePoints(atm_2.transform.Find("ATM_QUEUE_POINTS_3"));
-
-            return;
-        }
-        if (atm_3.activeInHierarchy)
-        {
-            atm_4.SetActive(true);
-
-            References.data.queue_controller.AddQueuePoints(atm_2.transform.Find("ATM_QUEUE_POINTS_4"));
 
             return;
         }
