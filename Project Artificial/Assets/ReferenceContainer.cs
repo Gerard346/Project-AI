@@ -13,6 +13,9 @@ public class ReferenceContainer : MonoBehaviour{
     
     public MoneyManager manager_money;
     public WinLoseCondition win_lose;
+    public RatingShop shop_rating;
+
+    public SelectionEntities entites_selection;
     void Start()
     {
         References.data = this;

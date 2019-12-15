@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ActivateATM : MonoBehaviour
 {
@@ -15,26 +13,27 @@ public class ActivateATM : MonoBehaviour
         {
             return;
         }
+        
         count++;
-        return;
-        /*
+
         if (!atm_2.activeInHierarchy)
         {
+            References.data.manager_money.AddMoney(-300);
             atm_2.SetActive(true);
-            
-            References.data.queue_controller.AddQueuePoints(atm_2.transform.Find("ATM_QUEUE_POINTS_2"));
+            atm_2.transform.Find("BoughtCanvas").gameObject.SetActive(true);
 
             return;
         }
         if (atm_2.activeInHierarchy && !atm_3.activeInHierarchy)
         {
-            atm_3.SetActive(true);
+            References.data.manager_money.AddMoney(-300);
 
-            References.data.queue_controller.AddQueuePoints(atm_2.transform.Find("ATM_QUEUE_POINTS_3"));
+            atm_3.SetActive(true);
+            atm_3.transform.Find("BoughtCanvas").gameObject.SetActive(true);
 
             return;
         }
 
-        return;*/
+        return;
     }
 }

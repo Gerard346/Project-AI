@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using NodeCanvas.Framework;
 public class QueueController : MonoBehaviour
 {
     public GameObject points_queue;
@@ -34,31 +34,24 @@ public class QueueController : MonoBehaviour
             target.client_state = ClientController.CLIENT_STATE.CLIENT_GO_BUYING;
 
             KeyValuePair<int, Transform> row_and_position = GetRandomQueuePoint();
-            target.SetTarget(row_and_position.Value.position);
-            target.assigned_queue_point = row_and_position.Value;
-            target.queue_controller = this;
+            if (row_and_position.Value != null)
+            {
+                target.SetTarget(row_and_position.Value.position);
+                target.assigned_queue_point = row_and_position.Value;
 
-            clients.Add(new KeyValuePair<ClientController,int>(target, row_and_position.Key));
-        }
-    }
-
-    private void OnTriggerStay(Collider coll)
-    {
-        ClientController target = coll.GetComponentInParent<ClientController>();
-        if (target != null && target.client_state == ClientController.CLIENT_STATE.CLIENT_GO_BUY)
-        {
-            target.client_state = ClientController.CLIENT_STATE.CLIENT_GO_BUYING;
-
-            KeyValuePair<int, Transform> row_and_position = GetRandomQueuePoint();
-            target.SetTarget(row_and_position.Value.position);
-            target.assigned_queue_point = row_and_position.Value;
-
-            clients.Add(new KeyValuePair<ClientController, int>(target, row_and_position.Key));
+                clients.Add(new KeyValuePair<ClientController, int>(target, row_and_position.Key));
+            }
+            else
+            {
+                target.GetComponent<Blackboard>().SetValue("OutOfTime", true);
+            }
         }
     }
 
     public bool ClientOnPoint(ClientController client)
     {
+        if (client.assigned_queue_point == null) return false;
+
         if(client.assigned_queue_point.GetSiblingIndex() == 0)
         {
            for(int i = 0; i< clients.Count; i++)
@@ -96,7 +89,6 @@ public class QueueController : MonoBehaviour
                 target_row = clients[i].Value;
                 client.client_state = ClientController.CLIENT_STATE.CLIENT_BUY_DONE;
                 client.assigned_queue_point = null;
-                client.queue_controller = null;
                 client.FreeRotation();
 
                 clients.RemoveAt(i);

@@ -14,10 +14,12 @@ public class HelpDependent : ActionTask
     protected override void OnExecute()
     {
         //Watch
+        watch_image = agent.transform.Find("Canvas").Find("watch_image").GetComponent<Image>();
 
         dependent_controller = agent.GetComponent<DependentController>();
         dependent_controller.GetClient().GetComponent<Blackboard>().SetValue("GettingHelp", true);
         dependent_controller.FixRotation();
+        timer = 0;  
 
     }
     protected override void OnUpdate()
@@ -32,6 +34,8 @@ public class HelpDependent : ActionTask
             dependent_controller.FreeRotation();
             dependent_controller.GetClient().client_state = ClientController.CLIENT_STATE.CLIENT_GO_BUY;
             blackboard.SetValue("Selected", false);
+            blackboard.SetValue("IsWorking", false);
+            References.data.entites_selection.ResetSelection();
             EndAction(true);
         }
     }

@@ -22,4 +22,9 @@ public class MoneyManager : MonoBehaviour
     {
         coins += money;
     }
+
+    public float TotalMoney()
+    {
+        return coins;
+    }
 }

@@ -42,15 +42,12 @@ public class CreateNewParkingPlaces : MonoBehaviour
         if (Physics.Raycast(myRay, out hit, 100.0f, car_layer))
         {
             temp_car_render.material.SetColor("_Color", Color.red);
-            Debug.Log("Colliding");
             return;
         }
 
         if (Physics.Raycast(myRay, out hit, 100.0f, terrain))
         {
             temp_car_render.material.SetColor("_Color", Color.green);
-
-           // Debug.Log("Not Colliding. You can build there");
             if (Input.GetMouseButtonDown(0))
             {
                 spawned = true;
@@ -60,11 +57,16 @@ public class CreateNewParkingPlaces : MonoBehaviour
                 Vector3 temp_v = new Vector3(0, (temp.GetComponent<Collider>().bounds.size.y / 2), 0);
                 temp.transform.position += temp_v;
                 temp.GetComponents<BoxCollider>()[0].enabled = true;
-                temp.GetComponents<BoxCollider>()[1].enabled = true;
 
-                //References.data.manager_client.spawn_points.Add(temp.transform.Find("SpawnPoint").position);
+                Vector3 new_spawn_point = temp.transform.Find("SpawnPoint").position;
+                new_spawn_point.y = -2.01f;
 
-
+                References.data.manager_client.AddPoints(new_spawn_point);
+                if (References.data.day_cycle.ReadyWorkers())
+                {
+                    References.data.manager_client.SpawnClients();
+                }
+                References.data.manager_money.AddMoney(-100);
             }
         }
 

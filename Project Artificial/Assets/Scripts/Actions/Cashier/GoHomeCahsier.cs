@@ -19,6 +19,7 @@ public class GoHomeCahsier : ActionTask
     {
         if (controller.cashier_state == CashierController.CASHIER_STATE.CASHIER_GO_HOME && controller.follow_path.path_completed)
         {
+            GameObject.Destroy(agent.gameObject);
             EndAction(true);
         }
 

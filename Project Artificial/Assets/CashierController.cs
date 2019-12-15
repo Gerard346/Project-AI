@@ -4,6 +4,7 @@ using UnityEngine;
 using BansheeGz.BGSpline.Components;
 using BansheeGz.BGSpline.Curve;
 using UnityEngine.UI;
+using NodeCanvas.Framework;
 
 public class CashierController : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class CashierController : MonoBehaviour
     
     public int level = 1;
     
-    private float attention_time = 30.0f;
+    private float attention_time = 10.0f;
     public float attend_time
     {
         get
@@ -54,6 +55,10 @@ public class CashierController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GetComponent<Blackboard>().GetValue<bool>("StoreIsOpened") != References.data.day_cycle.store_is_open)
+        {
+            GetComponent<Blackboard>().SetValue("StoreIsOpened", References.data.day_cycle.store_is_open);
+        }
     }
 
     public void AttendClient(ClientController target_client)
@@ -77,9 +82,9 @@ public class CashierController : MonoBehaviour
 
     private void FixRotationWithAngle(float angle)
     {
+        static_align.target_angle = angle;
         align.enabled = false;
         static_align.enabled = true;
-        static_align.target_angle = angle;
     }
 
     public void FreeRotation()

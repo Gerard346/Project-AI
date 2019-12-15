@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using NodeCanvas.Framework;
 public class ClientController : MonoBehaviour
 {
     public enum CLIENT_STATE
@@ -24,7 +24,6 @@ public class ClientController : MonoBehaviour
     SteeringAlign align = null;
     StaticAlign static_align = null;
 
-    public QueueController queue_controller = null;
     public Transform assigned_queue_point = null;
 
     CLIENT_STATE _client_state = CLIENT_STATE.CLIENT_IDLE;
@@ -42,27 +41,11 @@ public class ClientController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
-        if(client_state == CLIENT_STATE.CLIENT_GO_PICK && pathfinding.IsOnTarget())
+    {
+        if (GetComponent<Blackboard>().GetValue<bool>("StoreIsOpened") != References.data.day_cycle.store_is_open)
         {
-            client_state = CLIENT_STATE.CLIENT_GO_BUY;
-            pathfinding.SetTarget(buy_point);
+            GetComponent<Blackboard>().SetValue("StoreIsOpened", References.data.day_cycle.store_is_open);
         }
-        else if(queue_controller != null && client_state == CLIENT_STATE.CLIENT_GO_BUYING && pathfinding.IsOnTarget())
-        {
-            client_state = CLIENT_STATE.CLIENT_WAIT_BUYING;
-            queue_controller.ClientOnPoint(this);
-        }
-
-        else if (client_state == CLIENT_STATE.CLIENT_BUY_DONE)
-        {
-            client_state = CLIENT_STATE.CLIENT_GO_KILL;
-            pathfinding.SetTarget(kill_point);
-        }
-        else if (client_state == CLIENT_STATE.CLIENT_GO_KILL && pathfinding.IsOnTarget())
-        {
-            Destroy(gameObject);
-        }*/
     }
     public CLIENT_STATE client_state
     {

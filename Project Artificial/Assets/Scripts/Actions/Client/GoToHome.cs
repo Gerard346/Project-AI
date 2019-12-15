@@ -30,6 +30,8 @@ public class GoToHome : ActionTask
         
         if (blackboard.GetValue<bool>("OutOfTime") == true)
         {
+            References.data.shop_rating.DesactivateStars();
+            happy_icon.enabled = false;
             not_happy_icon.enabled = true;
             agent.gameObject.SetActive(true);
         }
@@ -40,9 +42,14 @@ public class GoToHome : ActionTask
         {
             agent.gameObject.SetActive(false);
 
-            //References.data.manager_client.spawn_points.Add(blackboard.GetValue<Vector3>("SpawnPos"));
+            References.data.manager_client.AddPoints(blackboard.GetValue<Vector3>("SpawnPos"));
 
             GameObject.Destroy(agent.gameObject);
+
+            if (References.data.day_cycle.store_is_open)
+            {
+                References.data.manager_client.SpawnClients();
+            }
         }
     }
 }

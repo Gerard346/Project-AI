@@ -22,10 +22,10 @@ public class DayCycle : MonoBehaviour
     static public bool next_day = false;
     public bool time_to_clean = false;
     public bool store_is_open = false;
-    public bool spawn_employees = true;
+    public bool spawn_employees = false;
     float total_time_day = 24 * 60 * 60;
     bool day_has_passed = false;
-
+    
     int workers_ready = 0;
 
     [Header("Entities")]
@@ -43,7 +43,7 @@ public class DayCycle : MonoBehaviour
         {
             entity_blackboard.SetValue("StoreIsOpened", true);
         }
-        spawn_employees = true;
+        //spawn_employees = true;
     }
 
     // Update is called once per frame
@@ -62,10 +62,10 @@ public class DayCycle : MonoBehaviour
             time_to_clean = true;
             next_day = true;
         }
-        /*if (actual_time > (total_time_day / 3) && day_has_passed == false){
+        if (actual_time > (total_time_day / 3) && day_has_passed == false){
             spawn_employees = true;
             day_has_passed = true;
-        }*/
+        }
 
         if(actual_time > total_time_day / 2.5)
         {
@@ -109,10 +109,17 @@ public class DayCycle : MonoBehaviour
     public void NotifyReadyWorker()
     {
         workers_ready += 1;
-        
-        /*if(workers_ready >= References.data.queue_controller.CashiersCount() + References.data.dependents_manager.DependentsCount())
-        {
 
-        }*/
+        int workers_num = References.data.queue_controller.CashiersCount() + References.data.dependents_manager.DependentsCount();
+        if (workers_ready >= workers_num && workers_num > 0)
+        {
+            References.data.manager_client.SpawnClients();
+        }
+    }
+
+    public bool ReadyWorkers()
+    {
+        int workers_num = References.data.queue_controller.CashiersCount() + References.data.dependents_manager.DependentsCount();
+        return workers_ready >= workers_num && workers_num > 0;
     }
 }

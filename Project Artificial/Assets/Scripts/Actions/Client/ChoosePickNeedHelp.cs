@@ -14,7 +14,7 @@ public class ChoosePickNeedHelp : ActionTask
     {
         int i = Random.Range(60, 80);
 
-        if (i > 51)
+        if (i < 51)
         {
             //blackboard.SetValue("NeedHelp", true);
             //blackboard.SetValue("Picked", false);

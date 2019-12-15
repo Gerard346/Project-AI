@@ -7,12 +7,12 @@ public class WinLoseCondition : MonoBehaviour
 {
     public Text lose_game;
     public Text win_game;
+    public Text score_text;
     public GameObject menu_end;
-    int ClientsUnHappy;
+    int score = 0;
     // Start is called before the first frame update
     void Start()
     {
-        ClientsUnHappy = 0;
     }
 
     // Update is called once per frame
@@ -29,12 +29,17 @@ public class WinLoseCondition : MonoBehaviour
         menu_end.SetActive(true);
         lose_game.enabled = true;
         Time.timeScale = 0;
+        score_text.enabled = true;
+        score_text.text = "Score: " + 0;
     }
 
     void WinGame()
     {
         menu_end.SetActive(true);
         win_game.enabled = true;
+        score_text.enabled = true;
+        score_text.text = "Score: " + References.data.manager_money.TotalMoney() + References.data.shop_rating.GetStars();
+
     }
 
     public void QuitGame()

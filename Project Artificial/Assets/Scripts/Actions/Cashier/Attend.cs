@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Attend : ActionTask
 {
     float timer = 0.0f;
-    float attend_time = 10.0f;
+    float attend_time = 0.0f;
     Image watch_image = null;
 
     private CashierController controller = null;

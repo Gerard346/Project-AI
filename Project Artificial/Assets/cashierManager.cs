@@ -40,6 +40,18 @@ public class cashierManager : MonoBehaviour
                 new_employer2.transform.parent = ATM_2.transform;
                 References.data.queue_controller.AddCashier(new_employer2.GetComponentInChildren<CashierController>());
 
+                if (ATM_2.transform.Find("BoughtCanvas") != null)
+                {
+                    References.data.queue_controller.AddQueuePoints(ATM_2.transform.Find("ATM_QUEUE_POINTS_2"));
+                    Destroy(ATM_2.transform.Find("BoughtCanvas").gameObject);
+                }
+
+                for(int i = 0; i<ATM_2.transform.childCount; i++)
+                {
+                    ATM_2.transform.GetChild(i).gameObject.SetActive(true);
+                }
+
+
                 new_employer2.SetActive(true);
             }
             if (ATM_3.activeSelf)
@@ -47,6 +59,17 @@ public class cashierManager : MonoBehaviour
                 GameObject new_employer3 = Instantiate(Cashier3);
                 new_employer3.transform.parent = ATM_3.transform;
                 References.data.queue_controller.AddCashier(new_employer3.GetComponentInChildren<CashierController>());
+
+                if (ATM_3.transform.Find("BoughtCanvas") != null)
+                {
+                    References.data.queue_controller.AddQueuePoints(ATM_3.transform.Find("ATM_QUEUE_POINTS_3"));
+                    Destroy(ATM_3.transform.Find("BoughtCanvas").gameObject);
+                }
+
+                for (int i = 0; i < ATM_3.transform.childCount; i++)
+                {
+                    ATM_3.transform.GetChild(i).gameObject.SetActive(true);
+                }
 
                 new_employer3.SetActive(true);
             }

@@ -20,6 +20,8 @@ public class ClientManager : MonoBehaviour
 
     public QueueController queue_controller;
 
+    bool pending_spawns = false;
+
     private void Start()
     {
         Transform[] scene_spawns = scene_spawns_container.GetComponentsInChildren<Transform>();
@@ -29,13 +31,18 @@ public class ClientManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-       /* if (day_cycle.store_is_open == true)
-        {*/
-        foreach(Vector3 spawn_point_item in spawn_points)
+        if(pending_spawns)
+        {
+            SpawnClients();
+        }
+        
+    }
+
+    public void SpawnClients()
+    {
+        foreach (Vector3 spawn_point_item in spawn_points)
         {
             int client_index = Random.Range(0, client_prefabs);
             GameObject client_prefab = Resources.Load<GameObject>("Clients/Client" + client_index);
@@ -56,9 +63,13 @@ public class ClientManager : MonoBehaviour
 
             spawn_points.Remove(spawn_point_item);
 
+            pending_spawns = spawn_points.Count > 0;
+
             break;
         }
-            //}
-        //}
+    }
+    public void AddPoints(Vector3 point)
+    {
+        spawn_points.Add(point);
     }
 }

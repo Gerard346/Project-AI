@@ -24,7 +24,7 @@ public class GoWorkCashier : ActionTask
             controller.cashier_state = CashierController.CASHIER_STATE.CASHIER_WORKING;
             controller.FixRotation();
             blackboard.SetValue("IsWorking", true);
-            //References.data.day_cycle.NotifyReadyWorker();
+            References.data.day_cycle.NotifyReadyWorker();
             EndAction(true);
         }
 

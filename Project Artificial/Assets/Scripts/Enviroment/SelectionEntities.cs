@@ -9,9 +9,24 @@ public class SelectionEntities : MonoBehaviour
     GameObject dependent_selected;
     GameObject client_selected;
 
-    void Start()
+    public void ResetSelection()
     {
-        
+        if (dependent_selected != null)
+        {
+            dependent_selected.transform.Find("circle_selected").gameObject.SetActive(false);
+            dependent_selected = null;
+        }
+
+        if (client_selected != null)
+        {
+            client_selected.transform.Find("circle_selected").gameObject.SetActive(false);
+            client_selected = null;
+        }
+        enabled = true;
+    }
+    public bool GetSelection()
+    {
+        return client_selected != null && dependent_selected != null;
     }
     void Update()
     {

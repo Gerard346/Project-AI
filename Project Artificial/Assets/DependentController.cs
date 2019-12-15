@@ -16,7 +16,10 @@ public class DependentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponent<Blackboard>().GetValue<bool>("StoreIsOpened") != References.data.day_cycle.store_is_open)
+        {
+            GetComponent<Blackboard>().SetValue("StoreIsOpened", References.data.day_cycle.store_is_open);
+        }
     }
 
     public void HelpClient(ClientController new_client)
