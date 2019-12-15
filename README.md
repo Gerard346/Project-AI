@@ -18,6 +18,10 @@ Spawns when the shop is open, goes to inside the shop, picks an area to pick an 
 
 At 12::00 at night he comes to clean the shop, after he cleaned all the shop he goes home.
 
+### Dependent
+
+Goes to the store when his shift starts, waits and observes clients if they need help, helps the clients when they do, goes home when shift ends.
+
 ## Controls
 
 * WASD: Camera Movement
@@ -53,6 +57,10 @@ You will find information about the game and the Behaviour Trees in the wiki: ht
 * **Cleaner**: The cleaner will walk to work when its his turn to work, grab the mob and start working until his time is done, leaves the mob back and goes back home.
 
 ![Cleaner BT](https://github.com/manavld/AIProjectPics/blob/master/Cleaner%20BT.jpg)
+
+* **Dependent**: The dependent will go to work when his shift starts, will observe the clients in case they need help, when client is in need of help the dependent will go there and help the client and when his shift ends he will leave the shop and go home.
+
+![Dependent BT](https://github.com/manavld/AIProjectPics/blob/master/Dependent%20BT.jpg)
 
 ## License
 
