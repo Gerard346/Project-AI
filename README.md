@@ -4,7 +4,7 @@ Grocery Store AI is an Artificial Intelligence based game made with Unity develo
 
 ## Information
 
-Grocery Store AI has 3 entities; cashier, client and cleaner that complete their function in a usual grocery store by our own programmed Steering Behaviours and with their own Behaviour Trees to move across, in and out of the store with its corresponding day/night cycle.
+Grocery Store AI has 4 entities; cashier, client, cleaner and dependent that complete their function in a usual grocery store by our own programmed Steering Behaviours and with their own Behaviour Trees to move across, in and out of the store with its corresponding day/night cycle.
 
 ## Innovation Website
 
