@@ -12,6 +12,7 @@ public class ReferenceContainer : MonoBehaviour{
     public CleanerController controller_cleaner;
     
     public MoneyManager manager_money;
+    public WinLoseCondition win_lose;
     void Start()
     {
         References.data = this;

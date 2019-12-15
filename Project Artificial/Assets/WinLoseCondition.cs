@@ -22,16 +22,13 @@ public class WinLoseCondition : MonoBehaviour
         {
             WinGame();
         }
-        if(ClientsUnHappy > 4)
-        {
-            LoseGame();
-        }
     }
 
-    void LoseGame()
+    public void LoseGame()
     {
         menu_end.SetActive(true);
         lose_game.enabled = true;
+        Time.timeScale = 0;
     }
 
     void WinGame()
@@ -47,6 +44,7 @@ public class WinLoseCondition : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
