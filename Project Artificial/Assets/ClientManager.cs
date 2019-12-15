@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using NodeCanvas.Framework;
 using System.Collections.Generic;
+using System.Collections;
+
 public class ClientManager : MonoBehaviour
 {
     public GameObject client_container = null;
@@ -24,9 +26,11 @@ public class ClientManager : MonoBehaviour
 
     private void Start()
     {
-        Transform[] scene_spawns = scene_spawns_container.GetComponentsInChildren<Transform>();
+        Transform[] scene_spawns = scene_spawns_container.GetComponentsInChildren<Transform>(true);
         foreach(Transform scene_spawn in scene_spawns)
         {
+            if (scene_spawn.gameObject == scene_spawns_container.gameObject) continue;
+
             spawn_points.Add(scene_spawn.position);
         }
     }
@@ -35,13 +39,26 @@ public class ClientManager : MonoBehaviour
     {
         if(pending_spawns)
         {
-            SpawnClients();
+            StartCoroutine(ClientsSpawnRoutine());
         }
         
     }
 
+    private IEnumerator ClientsSpawnRoutine()
+    {
+        while (pending_spawns)
+        {
+            float rand_time = Random.Range(4.0f, 8.0f);
+            yield return new WaitForSeconds(rand_time);
+            SpawnClients();
+        }
+    }
+
     public void SpawnClients()
     {
+        if(References.data.day_cycle.actual_time > 62000){
+            return;
+        }
         foreach (Vector3 spawn_point_item in spawn_points)
         {
             int client_index = Random.Range(0, client_prefabs);

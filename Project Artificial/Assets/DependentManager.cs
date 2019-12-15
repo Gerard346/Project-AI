@@ -15,7 +15,6 @@ public class DependentManager : MonoBehaviour
     {
         dependent = Resources.Load<GameObject>("Dependent/dependent");
 
-        AddDependent();
     }
 
     public DependentController AddDependent()

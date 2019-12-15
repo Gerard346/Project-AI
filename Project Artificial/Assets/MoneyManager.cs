@@ -9,7 +9,7 @@ public class MoneyManager : MonoBehaviour
     public Text coins_text;
     void Start()
     {
-        coins = 0;
+        coins = 1000;
     }
 
     // Update is called once per frame

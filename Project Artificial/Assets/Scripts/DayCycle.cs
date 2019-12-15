@@ -81,6 +81,11 @@ public class DayCycle : MonoBehaviour
         if (actual_time > 62000)
         {
             store_is_open = false;
+            Blackboard[] entities_blackboard = scene_entities.GetComponentsInChildren<Blackboard>(true);
+            foreach (Blackboard entity_blackboard in entities_blackboard)
+            {
+                entity_blackboard.SetValue("TimeToGoHome", true);
+            }
         }
 
         if (actual_time < total_time_day/2)

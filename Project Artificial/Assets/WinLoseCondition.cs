@@ -28,6 +28,8 @@ public class WinLoseCondition : MonoBehaviour
     {
         menu_end.SetActive(true);
         lose_game.enabled = true;
+        win_game.enabled = false;
+
         Time.timeScale = 0;
         score_text.enabled = true;
         score_text.text = "Score: " + 0;
@@ -37,9 +39,13 @@ public class WinLoseCondition : MonoBehaviour
     {
         menu_end.SetActive(true);
         win_game.enabled = true;
+        lose_game.enabled = false;
+        Time.timeScale = 0;
+        enabled = false;
         score_text.enabled = true;
-        score_text.text = "Score: " + References.data.manager_money.TotalMoney() + References.data.shop_rating.GetStars();
+        int score_value = (int)References.data.manager_money.TotalMoney() + References.data.shop_rating.GetStars() * 1000;
 
+        score_text.text = "Score: " + score_value;
     }
 
     public void QuitGame()

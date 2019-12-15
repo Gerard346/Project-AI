@@ -25,6 +25,8 @@ public class NeedHelp : ActionTask
             {
                 blackboard.SetValue("GettingHelp", false);
                 blackboard.SetValue("Picked", true);
+                blackboard.SetValue("NeedHelp", false);
+
                 EndAction(true);
             }
 

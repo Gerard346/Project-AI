@@ -18,7 +18,7 @@ public class ActivateATM : MonoBehaviour
 
         if (!atm_2.activeInHierarchy)
         {
-            References.data.manager_money.AddMoney(-300);
+            References.data.manager_money.AddMoney(-500);
             atm_2.SetActive(true);
             atm_2.transform.Find("BoughtCanvas").gameObject.SetActive(true);
 
@@ -26,7 +26,7 @@ public class ActivateATM : MonoBehaviour
         }
         if (atm_2.activeInHierarchy && !atm_3.activeInHierarchy)
         {
-            References.data.manager_money.AddMoney(-300);
+            References.data.manager_money.AddMoney(-500);
 
             atm_3.SetActive(true);
             atm_3.transform.Find("BoughtCanvas").gameObject.SetActive(true);

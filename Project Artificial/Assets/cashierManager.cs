@@ -27,6 +27,8 @@ public class cashierManager : MonoBehaviour
     {
         if (cycleday.spawn_employees == true)
         {
+            References.data.dependents_manager.AddDependent();
+
             if (ATM_1.activeSelf)
             {
                 GameObject new_employer1 = Instantiate(Cashier1);

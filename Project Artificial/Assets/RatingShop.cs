@@ -17,6 +17,10 @@ public class RatingShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(References.data.manager_money.TotalMoney() > 200)
+        {
+            return;
+        }
         CheckIfTheyAreAllActive();
     }
 
@@ -52,11 +56,13 @@ public class RatingShop : MonoBehaviour
         {
             if (!container_stars.transform.GetChild(i).gameObject.activeSelf)
             {
-                target.interactable = true;
                 return;
             }
         }
-        target.interactable = false;
+        if (target.IsInteractable())
+        {
+            target.interactable = false;
+        }
     }
 
     public int GetStars()

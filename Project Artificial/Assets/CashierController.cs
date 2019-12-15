@@ -42,7 +42,6 @@ public class CashierController : MonoBehaviour
     public GameObject lvl_3;
 
     public CASHIER_STATE cashier_state;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +101,7 @@ public class CashierController : MonoBehaviour
         }
         if(level == 1)
         {
+            References.data.manager_money.AddMoney(-100);
             level += 1;
             lvl_2.SetActive(true);
             return;
@@ -109,6 +109,8 @@ public class CashierController : MonoBehaviour
 
         if (level == 2)
         {
+            References.data.manager_money.AddMoney(-100);
+
             level += 1;
             lvl_3.SetActive(true);
             return;

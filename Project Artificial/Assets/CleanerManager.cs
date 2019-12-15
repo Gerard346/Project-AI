@@ -8,7 +8,7 @@ public class CleanerManager : MonoBehaviour
     public DayCycle cycleday;
 
     public Transform spawn_cleaner_point;
-    private GameObject cleaner;
+    public GameObject cleaner;
     public GameObject door;
     public GameObject mop;
 
@@ -19,7 +19,6 @@ public class CleanerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cleaner = Resources.Load<GameObject>("Cleaner/Cleaner");
     }
 
     // Update is called once per frame
