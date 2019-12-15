@@ -1,4 +1,4 @@
-# Grocery Store AI
+﻿# Grocery Store AI
 
 Grocery Store AI is an Artificial Intelligence based game made with Unity developed for a university project in CITM UPC (Terrasa, Spain) in our degree in Videogame Developement and Design.
 
@@ -24,20 +24,23 @@ At 12::00 at night he comes to clean the shop, after he cleaned all the shop he 
 
 ### Dependent
 
-Goes to the store when his shift starts, waits and observes clients if they need help, helps the clients when they do, goes home when shift ends.
+Goes to the store when his shift starts, waits and observes clients if they need help, helps the clients when they do, goes home when shift ends. For dependent movements, when a client needs your help to decide wich product will buy, you have to click the dependent, and then click the client. Afterwards the dependent will talk with the client and help him decide, so he goes home happy.
 
 ## Controls
 
 * WASD: Camera Movement
 * R: Return camera to initial position
+* With the mouse you can tell the dependent to help a client.
 * Car Botton: Click and put the car around the outside of the store to spawn car
 * Cashier Botton: Click to automatically create a cashier machine inside the store (maximum of 3 active)
 * Pause Botton: Click to pause game
+*Lvl up cashier so they sell faster.
+*Marketing Campaign button: Does a marketing campeign to increase a star.
 
 ## Win/Loss Condition
 
 * **Win**: The player will win if he/she successfuly completed 3 days without upseting more than 4 clients by leaving them unattending when they ask for help.
-* **Loss**: The player will lose if before those 3 days he/she upsets more than 4 clients by not helping them when they ask for it.
+* **Loss**: The player will lose if the store review has 0 stars.
 
 ## Authors
 
