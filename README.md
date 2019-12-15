@@ -34,8 +34,8 @@ Goes to the store when his shift starts, waits and observes clients if they need
 * Car Botton: Click and put the car around the outside of the store to spawn car
 * Cashier Botton: Click to automatically create a cashier machine inside the store (maximum of 3 active)
 * Pause Botton: Click to pause game
-*Lvl up cashier so they sell faster.
-*Marketing Campaign button: Does a marketing campeign to increase a star.
+* Lvl up cashier so they sell faster.
+* Marketing Campaign button: Does a marketing campeign to increase a star.
 
 ## Win/Loss Condition
 
