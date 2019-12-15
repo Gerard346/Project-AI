@@ -4,7 +4,11 @@ Grocery Store AI is an Artificial Intelligence based game made with Unity develo
 
 ## Information
 
-Grocery Store AI has 3 entities; cashier, client and cleaner that complete their function in a usual grocery store by our own programmed Steering Behaviours and with their own Behaviour Trees to move across, in and out of the store with its corresponding day/night cycle.
+Grocery Store AI has 4 entities; cashier, client, cleaner and dependent that complete their function in a usual grocery store by our own programmed Steering Behaviours and with their own Behaviour Trees to move across, in and out of the store with its corresponding day/night cycle.
+
+## Innovation Website
+
+Go to our website for full information and visuals: https://manavld.github.io/GroceryStoreAI/
 
 ### Cashier
 
@@ -26,6 +30,14 @@ Goes to the store when his shift starts, waits and observes clients if they need
 
 * WASD: Camera Movement
 * R: Return camera to initial position
+* Car Botton: Click and put the car around the outside of the store to spawn car
+* Cashier Botton: Click to automatically create a cashier machine inside the store (maximum of 3 active)
+* Pause Botton: Click to pause game
+
+## Win/Loss Condition
+
+* **Win**: The player will win if he/she successfuly completed 3 days without upseting more than 4 clients by leaving them unattending when they ask for help.
+* **Loss**: The player will lose if before those 3 days he/she upsets more than 4 clients by not helping them when they ask for it.
 
 ## Authors
 
