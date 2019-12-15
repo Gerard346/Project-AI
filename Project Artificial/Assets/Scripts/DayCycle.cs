@@ -18,7 +18,6 @@ public class DayCycle : MonoBehaviour
 
     public Text time_ui;
     public Text day_ui;
-    public Text coin_ui;
     private static int coins = 0;
     static public bool next_day = false;
     public bool time_to_clean = false;
@@ -105,14 +104,6 @@ public class DayCycle : MonoBehaviour
 
         string[] temptime = current_time.ToString().Split(":"[0]);
         time_ui.text = "Actual Time: " + temptime[0] + "h" + temptime[1] + "min";
-
-        if (Trigger.needs_adding == true)
-        {
-            coins += Trigger.coin;
-            Trigger.cash.Play();
-            Trigger.needs_adding = false;
-        }
-        coin_ui.text = "Total Coins: " + coins;
     }
 
     public void NotifyReadyWorker()

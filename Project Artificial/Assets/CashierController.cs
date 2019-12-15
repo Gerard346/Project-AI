@@ -27,7 +27,7 @@ public class CashierController : MonoBehaviour
         }
     }
 
-    
+    public AudioSource cashier_sound;
     public SteeringFollowPath follow_path = null;
     public BGCcMath walk_to_work_path;
     public BGCcMath go_home_path;
@@ -48,40 +48,12 @@ public class CashierController : MonoBehaviour
         align = GetComponent<SteeringAlign>();
         static_align = GetComponent<StaticAlign>();
         follow_path = GetComponent<SteeringFollowPath>();
-        //transform.position = spawn_pos.position;
-        //follow_path.enabled = true;
-       // follow_path.SetPath(walk_to_work_path, false);
-       // cashier_state = CASHIER_STATE.CASHIER_WALK_TO_WORK;
+        cashier_sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (cashier_state == CASHIER_STATE.CASHIER_WALK_TO_WORK && follow_path.path_completed)
-        {
-            cashier_state = CASHIER_STATE.CASHIER_WORKING;
-            FixRotationWithAngle(orientation_pos.transform.localRotation.eulerAngles.y);
-        }
-        if(cashier_state == CASHIER_STATE.CASHIER_ATTENDING)
-        {
-            timer += Time.deltaTime;
-            if (timer > attention_time)
-            {
-                timer = 0;
-                cashier_state = CASHIER_STATE.CASHIER_WORKING;
-                queue_controller.ClientDone(client_on_attention);
-            }
-        }
-        if(References.data.day_cycle.actual_time> 79200 && cashier_state != CASHIER_STATE.CASHIER_GO_HOME)
-        {
-            FreeRotation();
-            cashier_state = CASHIER_STATE.CASHIER_GO_HOME;
-            follow_path.SetPath(go_home_path, false);
-        }
-        if (cashier_state == CASHIER_STATE.CASHIER_GO_HOME && follow_path.path_completed)
-        {
-            Destroy(gameObject, 0.5f);
-        }*/
     }
 
     public void AttendClient(ClientController target_client)
